@@ -46,3 +46,9 @@ body {
   overflow-x: hidden;
   background-color: #e7e6e2;
 }
+
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

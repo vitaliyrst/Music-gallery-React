@@ -1,14 +1,10 @@
-.app_container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 .app_main {
     width: 70vw;
-    margin: 0 auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 
-    flex-grow: 1;
+    flex: 1 0 auto;
     position: relative;
 }
 

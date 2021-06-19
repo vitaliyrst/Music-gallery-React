@@ -1,5 +1,6 @@
 .app_header {
     background-color: #ddad5a;
+    flex: 0 0 auto;
 }
 
 .navbar_container {
