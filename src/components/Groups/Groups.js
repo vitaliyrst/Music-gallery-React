@@ -1,7 +1,7 @@
 import React from "react";
-import './Gallery.css';
+import './Groups.css';
 
-const Gallery = () => {
+const Groups = () => {
     return (
         <div>
             gallery
@@ -9,4 +9,4 @@ const Gallery = () => {
     )
 }
 
-export default Gallery;
+export default Groups;

@@ -1,0 +1,52 @@
+.app_footer {
+    width: 100%;
+    height: 100px;
+
+    background-color: #ddad5a;
+
+    flex-shrink: 0;
+}
+
+.footer_container {
+    width: 70vw;
+    height: 100px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_icon_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_icon_list_item {
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    cursor: pointer;
+}
+
+.footer_year{
+    margin-top: 10px;
+
+    font-family: Roboto,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    opacity: 0.7;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}

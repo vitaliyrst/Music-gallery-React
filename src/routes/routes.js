@@ -1,6 +1,6 @@
 import Main from "../components/Main/Main";
 import News from "../components/News/News";
-import Gallery from "../components/Gallery/Gallery";
+import Groups from "../components/Groups/Groups";
 
 const routes = [
     {
@@ -14,8 +14,8 @@ const routes = [
         exact: true
     },
     {
-        path: '/gallery',
-        component: Gallery,
+        path: '/groups',
+        component: Groups,
         exact: true
     }
 ];

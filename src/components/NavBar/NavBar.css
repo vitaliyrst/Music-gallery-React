@@ -1,12 +1,11 @@
 .app_header {
-    width: 100%;
-    background-color: #000000;
+    background-color: #ddad5a;
 }
 
 .navbar_container {
-    width: 90vw;
+    width: 70vw;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 
     box-sizing: border-box;
 
@@ -15,37 +14,28 @@
     align-items: center;
 }
 
-.navbar_logo {
-    width: 80px;
-    height: 45px;
+.navbar_logo_link {
     margin-right: 5%;
-
     flex-basis: 10%;
 }
 
-.navbar_logo_link {
-    width: 100%;
-    height: 100%;
-
-    position: relative;
-}
-
-.navbar_logo_img {
+.navbar_logo {
     width: 80px;
-    height: 60px;
+    height: 80px;
 
-    position: absolute;
-    left: -40px;
-    top: -7px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+    transform: rotate(-20deg);
 }
 
-.navbar_logo_img:hover {
+.navbar_logo:hover {
     animation: ease-in 1s hoverLogoAnimate;
 }
 
 @keyframes hoverLogoAnimate {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(-20deg);
     }
     100% {
         transform: rotate(360deg);
@@ -65,6 +55,10 @@
 
 .navbar_list_item {
     margin-left: 5%;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .navbar_list_item_link {
@@ -73,28 +67,28 @@
     font-size: 20px;
     line-height: 32px;
 
-    color: #FFFFFF;
+    color: #1a1918;
     text-decoration: none;
 
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 3px solid #1a1918;
     display: inline-block;
 }
 
 .navbar_list_item_link:hover {
-    color: #f1356d;
-    border-color: #f1356d;
+    color: #b44f1e;
+    border-color: #b44f1e;
     animation: ease-in 0.3s hoverItemAnimate;
 }
 
 @keyframes hoverItemAnimate {
     0% {
-        color: #FFFFFF;
-        border-color: #ffffff;
+        color: #1a1918;
+        border-color: #1a1918;
     }
 
     100% {
-        color: #f1356d;
-        border-color: #f1356d;
+        color: #b44f1e;
+        border-color: #b44f1e;
     }
 }
 
@@ -107,26 +101,30 @@
     height: 40px;
 
     font-family: Inter, sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
 
     outline: none;
-    border: 2px solid white;
+    border: 3px solid #1a1918;
     border-radius: 20px;
 
-    color: #FFFFFF;
+    color: #1a1918;
     background-color: rgba(255, 255, 255, 0.1);
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 
     cursor: pointer;
 }
 
 .navbar_auth_button:hover {
-    color: #f1356d;
-    border-color: #f1356d;
+    color: #b44f1e;
+    border-color: #b44f1e;
     animation: ease-in 0.3s hoverItemAnimate;
 }
 
 .navbar_auth_button:active {
-    transform: translateY(4px);
+    transform: translate(2px,2px);
 }

@@ -7,22 +7,14 @@ const NavBar = () => {
     return (
         <header className='app_header'>
             <nav className='navbar_container'>
-                <div className='navbar_logo'>
-                    <Link className='navbar_logo_link' to='/'>
-                        <img
-                            className='navbar_logo_img'
-                            src={'./assets/images/logo/logo.png'}
-                            alt='music gallery logo'
-                        />
-                    </Link>
-                </div>
+
+                <Link className='navbar_logo_link' to='/' >
+                    <div className='navbar_logo' style={{backgroundImage: 'url("/assets/images/logo/logo.png")'}}/>
+                </Link>
 
                 <ul className='navbar_list'>
                     <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/'>Main</Link>
-                    </li>
-                    <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/gallery'>Gallery</Link>
+                        <Link className='navbar_list_item_link' to='/groups'>Groups</Link>
                     </li>
                     <li className='navbar_list_item'>
                         <Link className='navbar_list_item_link' to='/news'>News</Link>

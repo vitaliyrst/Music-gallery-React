@@ -1,16 +1,12 @@
 .app_container {
     min-height: 100vh;
-
-    text-align: center;
-
     display: flex;
     flex-direction: column;
 }
 
-.app_main_container {
-    flex-grow: 1;
-}
+.app_main {
+    width: 70vw;
+    margin: 0 auto;
 
-.app_footer_container {
-    flex-shrink: 0;
+    flex-grow: 1;
 }
