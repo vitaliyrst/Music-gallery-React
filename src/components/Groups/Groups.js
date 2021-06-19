@@ -3,8 +3,8 @@ import './Groups.css';
 
 const Groups = () => {
     return (
-        <div>
-            gallery
+        <div className='groups_container page'>
+            groups
         </div>
     )
 }

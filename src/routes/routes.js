@@ -1,23 +1,23 @@
 import Main from "../components/Main/Main";
-import News from "../components/News/News";
+import Gallery from "../components/Gallery/Gallery";
 import Groups from "../components/Groups/Groups";
 
 const routes = [
     {
         path: '/',
-        component: Main,
-        exact: true
-    },
-    {
-        path: '/news',
-        component: News,
+        Component: Main,
         exact: true
     },
     {
         path: '/groups',
-        component: Groups,
+        Component: Groups,
         exact: true
-    }
+    },
+    {
+        path: '/3d-gallery',
+        Component: Gallery,
+        exact: true
+    },
 ];
 
 export default routes;

@@ -43,5 +43,6 @@ body {
   line-height: 24px;
   color: #1a1918;
 
+  overflow-x: hidden;
   background-color: #e7e6e2;
 }

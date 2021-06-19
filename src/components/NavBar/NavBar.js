@@ -14,10 +14,13 @@ const NavBar = () => {
 
                 <ul className='navbar_list'>
                     <li className='navbar_list_item'>
+                        <Link className='navbar_list_item_link' to='/'>Main</Link>
+                    </li>
+                    <li className='navbar_list_item'>
                         <Link className='navbar_list_item_link' to='/groups'>Groups</Link>
                     </li>
                     <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/news'>News</Link>
+                        <Link className='navbar_list_item_link' to='/3d-gallery'>3D Gallery</Link>
                     </li>
                 </ul>
 
