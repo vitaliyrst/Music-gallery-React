@@ -1,18 +1,12 @@
-import React, {useEffect} from "react";
+import React from "react";
 import './App.css';
 import NavBar from "./components/NavBar/NavBar";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import routes from "./routes/routes";
 import Footer from "./components/Footer/Footer";
-import * as FirebaseService from "./firebase/firebase";
 import {CSSTransition} from "react-transition-group";
 
-function App() {
-
-    useEffect(() => {
-        const data = FirebaseService.getGroupsList()
-        console.log(data)
-    })
+const App = () => {
 
     return (
         <Router>
