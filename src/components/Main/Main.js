@@ -18,7 +18,7 @@ const Main = () => {
             setPosts(result);
             setTimeout(() => {
                 setLoading(false);
-            }, 2000)
+            }, 2000);
 
         }
 

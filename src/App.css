@@ -8,12 +8,15 @@
     position: relative;
 }
 
+/*
 @keyframes fade-in {
     0% {
+        position: absolute;
         opacity: 0;
         transform: translateX(-100px);
     }
     100% {
+        position: static;
         transform: translateX(0);
         opacity: 1;
     }
@@ -21,17 +24,19 @@
 
 @keyframes fade-out {
     0% {
+        position: absolute;
         opacity: 1;
         transform: translateX(0);
     }
     100% {
+        position: absolute;
         transform: translateX(100%);
         opacity: 0;
     }
 }
 
 .page {
-    position: absolute;
+    position: relative;
 }
 
 .page-enter-active {
@@ -39,5 +44,31 @@
 }
 
 .page-exit-active {
-    animation: fade-out 1s forwards;
+    animation: fade-out 0.9s forwards;
+}*/
+
+.page-enter {
+    position: absolute;
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.page-enter-active {
+    position: absolute;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+    position: absolute;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.page-exit-active {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
 }
