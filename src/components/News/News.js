@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from "react";
-import './Main.css';
+import './News.css';
 import Posts from "./Posts/Posts";
 import Pagination from "../Pagination/Pagination";
 import Fallback from "../Loader/Loader";
 
-const Main = () => {
+const News = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1)
-    const [postsPerPage, setPostsPerPage] = useState(15);
+    const [postsPerPage, setPostsPerPage] = useState(4);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -18,7 +18,7 @@ const Main = () => {
             setPosts(result);
             setTimeout(() => {
                 setLoading(false);
-            }, 2000);
+            }, 1000);
 
         }
 
@@ -48,4 +48,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default News;

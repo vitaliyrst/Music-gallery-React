@@ -55,7 +55,8 @@
 }
 
 .navbar_list_item {
-    margin-left: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
 
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -129,3 +130,65 @@
 .navbar_auth_button:active {
     transform: translate(2px,2px);
 }
+
+@media screen and (max-width: 1000px){
+    .navbar_container {
+        width: 80vw;
+        margin: 0 auto;
+        padding: 11px;
+    }
+
+    .navbar_logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .navbar_auth_button {
+        width: 90px;
+        height: 40px;
+
+        font-size: 16px;
+        line-height: 20px;
+
+        border: 2px solid #1a1918;
+    }
+
+    .navbar_list_item_link {
+        font-size: 20px;
+        line-height: 24px;
+
+        border-bottom: 2px solid #1a1918;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .navbar_container {
+        width: 95vw;
+        min-width: 350px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .navbar_logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .navbar_auth_button {
+        width: 70px;
+        height: 30px;
+
+        font-size: 12px;
+        line-height: 18px;
+
+        border: 2px solid #1a1918;
+    }
+
+    .navbar_list_item_link {
+        font-size: 14px;
+        line-height: 20px;
+
+        border-bottom: 2px solid #1a1918;
+    }
+}
+

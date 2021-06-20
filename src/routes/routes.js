@@ -1,11 +1,17 @@
-import Main from "../components/Main/Main";
+import News from "../components/News/News";
 import Gallery from "../components/Gallery/Gallery";
 import Groups from "../components/Groups/Groups";
+import Post from "../components/News/Post/Post";
 
 const routes = [
     {
-        path: '/',
-        Component: Main,
+        path: '/news',
+        Component: News,
+        exact: true
+    },
+    {
+        path: '/news/:slug',
+        Component: Post,
         exact: true
     },
     {

@@ -8,13 +8,13 @@ const NavBar = () => {
         <header className='app_header'>
             <nav className='navbar_container'>
 
-                <Link className='navbar_logo_link' to='/' >
+                <Link className='navbar_logo_link' to='/news' >
                     <div className='navbar_logo' style={{backgroundImage: 'url("/assets/images/logo/logo.png")'}}/>
                 </Link>
 
                 <ul className='navbar_list'>
                     <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/'>Main</Link>
+                        <Link className='navbar_list_item_link' to='/news'>News</Link>
                     </li>
                     <li className='navbar_list_item'>
                         <Link className='navbar_list_item_link' to='/groups'>Groups</Link>

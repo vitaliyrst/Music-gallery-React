@@ -1,5 +1,5 @@
 .app_main {
-    width: 70vw;
+    width: 80vw;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -50,14 +50,14 @@
 .page-enter {
     position: absolute;
     opacity: 0;
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .page-enter-active {
     position: absolute;
     opacity: 1;
     transform: scale(1);
-    transition: opacity 300ms, transform 300ms;
+    transition: opacity 500ms, transform 500ms;
 }
 
 .page-exit {
@@ -69,6 +69,27 @@
 .page-exit-active {
     position: absolute;
     opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 300ms, transform 300ms;
+    transform: scale(0.8);
+    transition: opacity 500ms, transform 500ms;
 }
+
+@media screen and (max-width: 1000px){
+    .app_main {
+        width: 85vw;
+        margin-top: 10px;
+
+        flex: 1 0 auto;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .app_main {
+        width: 95vw;
+        margin-top: 10px;
+
+        flex: 1 0 auto;
+        position: relative;
+    }
+}
+

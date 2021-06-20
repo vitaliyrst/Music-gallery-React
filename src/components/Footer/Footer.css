@@ -47,3 +47,47 @@
     -webkit-user-select: none;
     user-select: none;
 }
+
+@media screen and (max-width: 1000px){
+    .app_footer {
+        height: 90px;
+    }
+
+    .footer_container {
+        height: 90px;
+    }
+
+    .footer_icon_list_item {
+        width: 28px;
+        height: 28px;
+    }
+
+    .footer_year{
+        margin-top: 9px;
+
+        font-size: 13px;
+        line-height: 17px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .app_footer {
+        height: 70px;
+    }
+
+    .footer_container {
+        height: 70px;
+    }
+
+    .footer_icon_list_item {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer_year{
+        margin-top: 7px;
+
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
