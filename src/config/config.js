@@ -9,7 +9,7 @@ const config = {
         measurementId: "G-J39YH20P6Q"
     },
     rrfConfig: {
-        userProfile: 'users'
+        userProfile: "users"
     }
 }
 
