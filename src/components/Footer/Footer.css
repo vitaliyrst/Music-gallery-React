@@ -6,6 +6,7 @@
 
 .footer_container {
     width: 70vw;
+    max-width: 1600px;
     height: 100px;
     margin: 0 auto;
 

@@ -8,10 +8,15 @@ const Posts = ({posts}) => {
         <ul className='posts_list'>
             {posts.map(post => (
                 <li key={post.id} className='posts_list_item'>
-                    <Link to={`/news/asdasdsad`}>
-                        <div className='posts_list_info_container' style={{backgroundImage: 'url("/assets/images/test/1.jpg")'}}>
+                    <Link to={{
+                        pathname: `/news/${post.id}`,
+                        state: {post: post}
+                    }}>
+                        <div className='posts_list_info_container'
+                             style={{backgroundImage: `url("${post.image}")`}}
+                        >
                             <div className='posts_list_published'>
-                                Valera Kimchitskiy | Published: June 18, 2021
+                                {post.author} | Published: {post.published}
                             </div>
                         </div>
                     </Link>

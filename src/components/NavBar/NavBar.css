@@ -5,6 +5,7 @@
 
 .navbar_container {
     width: 70vw;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 12px;
 

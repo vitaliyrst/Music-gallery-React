@@ -27,9 +27,9 @@ const App = () => {
                         )}
                     </Route>
                 ))}
-                <Redirect from='/' to='/news'/>
             </main>
 
+            <Redirect from={'/'} to={'/news'}/>
             <Footer/>
         </Router>
     );

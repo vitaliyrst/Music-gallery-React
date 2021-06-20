@@ -3,32 +3,33 @@ import './News.css';
 import Posts from "./Posts/Posts";
 import Pagination from "../Pagination/Pagination";
 import Fallback from "../Loader/Loader";
+import {useSelector} from "react-redux";
+import {useFirestoreConnect} from "react-redux-firebase";
 
 const News = () => {
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1)
-    const [postsPerPage, setPostsPerPage] = useState(4);
+    const postsPerPage = 4;
+    const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPosts, setCurrentPosts] = useState([]);
+
+    useFirestoreConnect([{collection: 'posts'}]);
+    const posts = useSelector(({firestore: {ordered}}) => ordered.posts);
 
     useEffect(() => {
-        const fetchPosts = async () => {
-            setLoading(true);
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-            const result = await response.json();
-            setPosts(result);
-            setTimeout(() => {
-                setLoading(false);
-            }, 1000);
-
+        if (posts) {
+            setLoading(false);
         }
+    }, [posts]);
+    
+    useEffect(() => {
+        if (posts) {
+            const indexOfLastPost = currentPage * postsPerPage;
+            const indexOfFirstPost = indexOfLastPost - postsPerPage;
+            setCurrentPosts(posts.slice(indexOfFirstPost, indexOfLastPost));
+        }
+    }, [currentPage, posts, postsPerPage]);
 
-        fetchPosts();
-    }, []);
-
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-    const handlePaginate = (pageNumber) => setCurrentPage(pageNumber)
+    const handlePaginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <>
