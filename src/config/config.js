@@ -1,12 +1,12 @@
 const config = {
     firebase: {
-        apiKey: "AIzaSyAQjkyIqkbu-F0vSM4EiyMgsTI0DZgajrs",
-        authDomain: "music-gallery-f3ad4.firebaseapp.com",
-        projectId: "music-gallery-f3ad4",
-        storageBucket: "music-gallery-f3ad4.appspot.com",
-        messagingSenderId: "1006986728084",
-        appId: "1:1006986728084:web:793c6d03c25c977b45da81",
-        measurementId: "G-J39YH20P6Q"
+        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+        authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+        projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+        storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+        appId: process.env.REACT_APP_FIREBASE_APP_ID,
+        measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
     },
     rrfConfig: {
         userProfile: "users"

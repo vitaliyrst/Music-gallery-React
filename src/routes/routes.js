@@ -10,7 +10,7 @@ const routes = [
         exact: true
     },
     {
-        path: '/news/:slug',
+        path: '/news/:id',
         Component: Post,
         exact: true
     },

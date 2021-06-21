@@ -3,7 +3,7 @@ import './News.css';
 import Posts from "./Posts/Posts";
 import Pagination from "../Pagination/Pagination";
 import Fallback from "../Loader/Loader";
-import {useSelector} from "react-redux";
+import {shallowEqual, useSelector} from "react-redux";
 import {useFirestoreConnect} from "react-redux-firebase";
 
 const News = () => {
@@ -12,22 +12,17 @@ const News = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [currentPosts, setCurrentPosts] = useState([]);
 
-    useFirestoreConnect([{collection: 'posts'}]);
-    const posts = useSelector(({firestore: {ordered}}) => ordered.posts);
+    useFirestoreConnect([{collection: 'posts', orderBy: ['id']}]);
+    const posts = useSelector(({firestore: {ordered}}) => ordered.posts, shallowEqual);
 
     useEffect(() => {
         if (posts) {
             setLoading(false);
-        }
-    }, [posts]);
-    
-    useEffect(() => {
-        if (posts) {
             const indexOfLastPost = currentPage * postsPerPage;
             const indexOfFirstPost = indexOfLastPost - postsPerPage;
             setCurrentPosts(posts.slice(indexOfFirstPost, indexOfLastPost));
         }
-    }, [currentPage, posts, postsPerPage]);
+    }, [posts, currentPage]);
 
     const handlePaginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -35,7 +30,7 @@ const News = () => {
         <>
             {loading ?
                 <Fallback className='loader' type='Puff' color='#000000' width={150} height={150}/> :
-                <div className='main_container page'>
+                <div className='news_container page'>
                     <Posts posts={currentPosts}/>
                     <Pagination
                         postsPerPage={postsPerPage}

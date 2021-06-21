@@ -56,7 +56,7 @@
 
 .posts_list_item:hover {
     transition: 1s;
-    transform: perspective(800px) rotate3d(0, 1, 0, 25deg);
+    transform: perspective(800px) rotate3d(0, 1, 0, 15deg);
 }
 
 .posts_list_item:not(hover) {

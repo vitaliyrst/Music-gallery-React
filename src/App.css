@@ -1,6 +1,6 @@
 .app_main {
-    width: 80vw;
-    max-width: 1400px;
+    width: 70vw;
+    max-width: 1200px;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -8,45 +8,6 @@
     flex: 1 0 auto;
     position: relative;
 }
-
-/*
-@keyframes fade-in {
-    0% {
-        position: absolute;
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    100% {
-        position: static;
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-out {
-    0% {
-        position: absolute;
-        opacity: 1;
-        transform: translateX(0);
-    }
-    100% {
-        position: absolute;
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
-.page {
-    position: relative;
-}
-
-.page-enter-active {
-    animation: fade-in 1s forwards;
-}
-
-.page-exit-active {
-    animation: fade-out 0.9s forwards;
-}*/
 
 .page-enter {
     position: absolute;
@@ -76,7 +37,7 @@
 
 @media screen and (max-width: 1000px){
     .app_main {
-        width: 85vw;
+        width: 80vw;
         margin-top: 10px;
 
         flex: 1 0 auto;
@@ -86,7 +47,7 @@
 
 @media screen and (max-width: 600px){
     .app_main {
-        width: 95vw;
+        width: 90vw;
         margin-top: 10px;
 
         flex: 1 0 auto;
