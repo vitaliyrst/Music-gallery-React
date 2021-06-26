@@ -8,25 +8,27 @@ const NavBar = () => {
         <header className='app_header'>
             <nav className='navbar_container'>
 
-                <Link className='navbar_logo_link' to='/news' >
+                <Link className='navbar_logo_link' to='/' >
                     <div className='navbar_logo' style={{backgroundImage: 'url("/assets/images/logo/logo.png")'}}/>
                 </Link>
 
                 <ul className='navbar_list'>
                     <li className='navbar_list_item'>
+                        <Link className='navbar_list_item_link' to='/'>Home</Link>
+                    </li>
+                    <li className='navbar_list_item'>
+                        <Link className='navbar_list_item_link' to='/members'>Members</Link>
+                    </li>
+                    <li className='navbar_list_item'>
+                        <Link className='navbar_list_item_link' to='/albums'>Albums</Link>
+                    </li>
+                    <li className='navbar_list_item'>
+                        <Link className='navbar_list_item_link' to='/gallery'>Gallery</Link>
+                    </li>
+                    <li className='navbar_list_item'>
                         <Link className='navbar_list_item_link' to='/news'>News</Link>
                     </li>
-                    <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/groups'>Groups</Link>
-                    </li>
-                    <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/3d-gallery'>3D Gallery</Link>
-                    </li>
                 </ul>
-
-                <div className='navbar_auth'>
-                    <button className='navbar_auth_button' type='button'> Sign in</button>
-                </div>
             </nav>
         </header>
     );

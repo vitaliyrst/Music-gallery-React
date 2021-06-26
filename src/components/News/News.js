@@ -38,6 +38,28 @@ const News = () => {
                         currentPage={currentPage}
                         onPaginate={handlePaginate}
                     />
+                    <iframe src="https://open.spotify.com/embed/playlist/1WNl2Jcnwo6PMM0PhfKmzp" width="100%"
+                            height="330" frameBorder="0" allowTransparency="true" allow="encrypted-media">
+
+                    </iframe>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A2DCzgO12HyMeGxoQlbtvQV&view=coverart"
+                            width="300" height="380" frameBorder="0" allowTransparency="true"></iframe>
+
+                    <iframe width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/828741755&color=%230c0805&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    <div style={{
+                        fontSize: "10px",
+                        color: "#cccccc",
+                        lineBreak: "anywhere",
+                        wordBreak: "normal",
+                        overflow: "hidden"
+                    }}>
+                        <a href="https://soundcloud.com/sum41" title="Sum 41" target="_blank"
+                           style={{color: "#cccccc", textDecoration: "none"}}>
+                            Sum 41
+                        </a> · <a
+                        href="https://soundcloud.com/sum41/sets/order-in-decline" title="Order In Decline"
+                        target="_blank" >Order In Decline</a></div>
                 </div>
             }
         </>
