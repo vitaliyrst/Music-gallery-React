@@ -5,11 +5,15 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import routes from "./routes/routes";
 import Footer from "./components/Footer/Footer";
 import {CSSTransition} from "react-transition-group";
-import {useFirestoreConnect} from "react-redux-firebase";
+import {useDispatch} from "react-redux";
+import {fetchGroups} from "./redux/actions/actions";
 
 const App = () => {
-    useFirestoreConnect([{collection: 'posts', orderBy: ['id'], storeAs: 'posts'}]);
-    useFirestoreConnect([{collection: 'groups', storeAs: 'groups'}]);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchGroups());
+    }, );
 
     return (
         <Router>

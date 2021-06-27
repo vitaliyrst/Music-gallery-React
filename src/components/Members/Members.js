@@ -1,31 +1,35 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import './Members.css';
-import {shallowEqual, useSelector} from "react-redux";
-import Member from "./Member/Member";
+import {useSelector} from "react-redux";
+import Fallback from "../Loader/Loader";
 
 const Members = () => {
-    const [biography, setBiography] = useState();
-
-    const groups = useSelector(({firestore: {ordered}}) => ordered.groups, shallowEqual);
-
-    useEffect(() => {
-        if (groups) {
-            setBiography(groups[0].biography);
-        }
-    }, [groups]);
+    const loading = useSelector(({app: {loading}}) => loading);
+    const biography = useSelector(({groups: {groups: {biography}}}) => biography);
 
     const getMembers = () => {
-        if (biography) {
-            return biography.map(member => {
-                return <Member key={member.id} data={member}/>;
-            }) ;
-        }
+        return biography.map(member => (
+            <div key={member.id} className='members_list_item'>
+                <div className='members_item_image_container'>
+                    <div className='members_item_name'>{member.name}</div>
+                    <img className='members_item_image' src={member.image} alt={member.name}/>
+                </div>
+            </div>
+        ));
     }
 
+
     return (
-        <div className='members_container page'>
-            {getMembers()}
-        </div>
+        <>
+            {!loading ?
+                <Fallback className='loader' type='Puff' color='#000000' width={150} height={150}/> :
+                <div className='members_container page'>
+                    <div className='members_list'>
+                        {getMembers()}
+                    </div>
+                </div>
+            }
+        </>
     );
 }
 

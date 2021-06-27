@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from 'react-router-dom';
 import './Post.css';
-import {useFirestoreConnect} from "react-redux-firebase";
 import {useSelector} from "react-redux";
 import Fallback from "../../Loader/Loader";
 
@@ -9,7 +8,6 @@ const Post = () => {
     const {id} = useParams();
     const [loading, setLoading] = useState(true);
 
-    useFirestoreConnect([{collection: 'posts', doc: id}]);
     const post = useSelector(({firestore: {data}}) => data.posts && data.posts[id]);
 
     useEffect(() => {

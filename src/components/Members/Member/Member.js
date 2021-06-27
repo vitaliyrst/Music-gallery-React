@@ -4,11 +4,11 @@ import './Member.css';
 const Member = ({data: {id, name, image, description}}) => {
 
     return (
-        <div>
+        <div key={id}>
             <h2>{name}</h2>
             <img src={image} alt={name}/>
-            {description.map(item => {
-                return <p>{item}</p>
+            {description.map((item, index) => {
+                return <p key={index}>{item}</p>
             })}
         </div>
     );

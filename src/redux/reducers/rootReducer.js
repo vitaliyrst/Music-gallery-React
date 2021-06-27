@@ -1,12 +1,10 @@
 import {combineReducers} from "redux";
-import {firebaseReducer} from "react-redux-firebase";
-import {firestoreReducer} from "redux-firestore";
 import {appReducer} from "./app/appReducer";
+import {groupsReducer} from "./groups/groupsReducer";
 
 export const rootReducer = combineReducers(
     {
-        firebase: firebaseReducer,
-        firestore: firestoreReducer,
-        app: appReducer
+        app: appReducer,
+        groups: groupsReducer
     }
 );

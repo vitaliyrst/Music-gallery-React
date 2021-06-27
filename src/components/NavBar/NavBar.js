@@ -1,6 +1,6 @@
 import React from "react";
 import './NavBar.css';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const NavBar = () => {
 
@@ -8,26 +8,31 @@ const NavBar = () => {
         <header className='app_header'>
             <nav className='navbar_container'>
 
-                <Link className='navbar_logo_link' to='/' >
+                <NavLink className='navbar_logo_link' to='/'>
                     <div className='navbar_logo' style={{backgroundImage: 'url("/assets/images/logo/logo.png")'}}/>
-                </Link>
+                </NavLink>
 
                 <ul className='navbar_list'>
                     <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/'>Home</Link>
+                        <NavLink className='navbar_list_item_link' exact to='/'
+                                 activeClassName='selected' >Home</NavLink>
                     </li>
                     <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/members'>Members</Link>
+                        <NavLink className='navbar_list_item_link' exact to='/members'
+                                 activeClassName='selected'>Members</NavLink>
                     </li>
                     <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/albums'>Albums</Link>
+                        <NavLink className='navbar_list_item_link' exact to='/albums'
+                                 activeClassName='selected'>Albums</NavLink>
                     </li>
                     <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/gallery'>Gallery</Link>
+                        <NavLink className='navbar_list_item_link' exact to='/gallery'
+                                 activeClassName='selected'>Gallery</NavLink>
                     </li>
-                    <li className='navbar_list_item'>
-                        <Link className='navbar_list_item_link' to='/news'>News</Link>
-                    </li>
+                    {/*<li className='navbar_list_item'>
+                        <NavLink className='navbar_list_item_link' exact to='/news'
+                                 activeClassName='selected'>News</NavLink>
+                    </li>*/}
                 </ul>
             </nav>
         </header>

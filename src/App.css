@@ -1,5 +1,6 @@
 .app_main {
     width: 80vw;
+    max-width: 1200px;
     margin-top: 35px;
     margin-right: auto;
     margin-left: auto;
