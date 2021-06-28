@@ -66,7 +66,14 @@
 
 @media screen and (max-width: 600px) {
     .members_container {
+        box-sizing: border-box;
+        max-width: 370px;
+        margin: 0 auto;
         padding: 15px;
+    }
+
+    .members_list {
+        width: 100%;
     }
 
     .members_list_item {
@@ -74,10 +81,10 @@
     }
 
     .members_item_image {
-        width: 350px;
-        height: 350px;
+        width: 100%;
+        height: auto;
         margin: 10px 0 15px;
-        border: 3px solid rgba(196, 24, 24, 0.3);
+        border: 0;
     }
 
     .members_item_description {
