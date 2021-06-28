@@ -38,18 +38,19 @@
     position: absolute;
     right: -1vw;
 
-    animation: ease-in-out 2s show_home_preview_container;
+    animation: ease-in-out 1.7s show_home_preview_container;
 }
 
 @keyframes show_home_preview_container {
     0% {
-        transform: translateX(2000px) scale(0.1);
+        transform: translateX(2000px);
     }
-    70% {
-        transform: translateX(1000px) scale(1.1);
+    80% {
+        opacity: 0;
+        transform: translateX(1000px);
     }
     100% {
-        transform: scale(1);
+        opacity: 1;
     }
 }
 
@@ -65,18 +66,19 @@
     text-transform: uppercase;
     text-align: center;
 
-    animation: ease-in 2.5s show_home_preview;
+    animation: ease-in 2.2s show_home_preview;
 }
 
 @keyframes show_home_preview {
     0% {
-        transform: translateX(2000px) scale(0.1);
+        transform: translateX(2000px);
     }
-    70% {
-        transform: translateX(1000px) scale(1.1);
+    80% {
+        opacity: 0;
+        transform: translateX(1000px);
     }
     100% {
-        transform: scale(1);
+        opacity: 1;
     }
 }
 
@@ -92,18 +94,19 @@
 
     color: rgba(255, 255, 255, 0.8);
 
-    animation: ease-in 3.5s show_home_description;
+    animation: ease-in 2.7s show_home_description;
 }
 
 @keyframes show_home_description {
     0% {
-        transform: translateX(2000px) scale(0.1);
+        transform: translateX(2000px);
     }
-    70% {
-        transform: translateX(1000px) scale(1.1);
+    80% {
+        opacity: 0;
+        transform: translateX(1000px);
     }
     100% {
-        transform: scale(1);
+        opacity: 1;
     }
 }
 
@@ -112,7 +115,7 @@
     left: 0;
     bottom: 10%;
 
-    animation: ease-in 4s show_home_link;
+    animation: ease-in 3.2s show_home_link;
 }
 
 .home_click_next:hover {
@@ -153,13 +156,14 @@
 
 @keyframes show_home_link {
     0% {
-        transform: translateX(-2000px) scale(0.1);
+        transform: translateX(-2000px);
     }
-    70% {
-        transform: translateX(-1000px) scale(1.1);
+    80% {
+        opacity: 0;
+        transform: translateX(-1000px);
     }
     100% {
-        transform: scale(1);
+        opacity: 1;
     }
 }
 
