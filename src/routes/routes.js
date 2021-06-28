@@ -1,7 +1,6 @@
 import Home from "../components/Home/Home";
 
 import Members from "../components/Members/Members";
-import Member from "../components/Members/Member/Member";
 
 import Albums from "../components/Albums/Albums";
 import Album from "../components/Albums/Album/Album";
@@ -20,11 +19,6 @@ const routes = [
     {
         path: '/members',
         Component: Members,
-        exact: true
-    },
-    {
-        path: '/members/:id',
-        Component: Member,
         exact: true
     },
     {

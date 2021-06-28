@@ -38,7 +38,7 @@
     position: absolute;
     right: -1vw;
 
-    animation: ease-in-out 3s show_home_preview_container;
+    animation: ease-in-out 2s show_home_preview_container;
 }
 
 @keyframes show_home_preview_container {
@@ -65,7 +65,7 @@
     text-transform: uppercase;
     text-align: center;
 
-    animation: ease-in 3.5s show_home_preview;
+    animation: ease-in 2.5s show_home_preview;
 }
 
 @keyframes show_home_preview {
@@ -92,7 +92,7 @@
 
     color: rgba(255, 255, 255, 0.8);
 
-    animation: ease-in 4s show_home_description;
+    animation: ease-in 3.5s show_home_description;
 }
 
 @keyframes show_home_description {
@@ -107,13 +107,16 @@
     }
 }
 
-
 .home_click_next {
     position: absolute;
     left: 0;
     bottom: 10%;
 
-    animation: ease-in 3.5s show_home_link;
+    animation: ease-in 4s show_home_link;
+}
+
+.home_click_next:hover {
+    transform: scale(1.2);
 }
 
 .home_click_link {
@@ -130,7 +133,21 @@
     text-decoration: none;
 }
 
-.home_poster{
+.home_click_link:hover {
+    color: rgba(196, 24, 24, 0.9);
+    animation: 1s linear home_click_link_hover;
+}
+
+@keyframes home_click_link_hover {
+    0% {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        color: rgba(196, 24, 24, 0.9);
+    }
+}
+
+.home_poster {
     display: none;
 }
 
@@ -228,7 +245,7 @@
         line-height: 24px;
     }
 
-    .home_poster{
+    .home_poster {
         width: 100vw;
         height: 100vh;
 
