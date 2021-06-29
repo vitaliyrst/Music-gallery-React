@@ -21,6 +21,7 @@ const Members = () => {
         <>
             {loading ?
                 <Fallback className='loader' type='Puff' color='#c41818' width={150} height={150}/> :
+
                 <div className='members_container page'>
                     <div className='members_list'>
                         {biography.map((member, index) => (

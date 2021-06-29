@@ -1,4 +1,4 @@
-import {FETCH_GROUP, GET_BIOGRAPHY, GET_MEMBER, HIDE_LOADER, SHOW_LOADER} from "../types";
+import {FETCH_GROUP, HIDE_LOADER, SHOW_LOADER} from "../types";
 import database from "../../firebase/firebase";
 
 export const showLoader = () => {
@@ -25,18 +25,5 @@ export const fetchGroup = () => async (dispatch) => {
     } catch (e) {
         console.log('Fetch Group error', e.message);
         dispatch(hideLoader());
-    }
-}
-
-export const getBiography = () => {
-    return {
-        type: GET_BIOGRAPHY
-    }
-}
-
-export const getMember = (id) => {
-    return {
-        type: GET_MEMBER,
-        payload: Number(id)
     }
 }

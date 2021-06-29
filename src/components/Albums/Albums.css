@@ -1,3 +1,142 @@
-.albums_container{
-    padding: 20px;
+.albums_container {
+    max-width: 1200px;
+}
+
+.albums_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.albums_list_item {
+    flex-basis: 30%;
+    cursor: pointer;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.albums_item_link{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.albums_item_title {
+    min-width: 262px;
+    font-family: Hellix, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.albums_item_image_container {
+    position: relative;
+}
+
+.albums_item_image {
+    width: 100%;
+    height: auto;
+
+    margin-top: 10px;
+    margin-bottom: 60px;
+
+    display: block;
+}
+
+.albums_item_timeline {
+    padding: 10px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.albums_list_item:nth-child(odd):hover {
+    transition: 1s;
+    transform: perspective(800px) rotate3d(0, 0, 1, 5deg) scale(1.1);
+}
+
+.albums_list_item:nth-child(even):not(hover) {
+    transition: 1s;
+    transform: perspective(800px) rotate3d(0, 0, 1, 0deg) scale(1);
+}
+
+.albums_list_item:nth-child(even):hover {
+    transition: 1s;
+    transform: perspective(800px) rotate3d(0, 0, 1, -5deg) scale(1.1);
+}
+
+.albums_list_item:nth-child(odd):not(hover) {
+    transition: 1s;
+    transform: perspective(800px) rotate3d(0, 0, 1, 0deg) scale(1);
+}
+
+@media screen and (max-width: 1000px) {
+    .albums_container {
+        min-width: 700px;
+    }
+
+    .albums_list {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    .albums_item_title {
+        min-width: 230px;
+
+        font-size: 18px;
+        line-height: 24px;
+
+    }
+
+    .albums_item_image {
+        margin-top: 8px;
+        margin-bottom: 50px;
+    }
+
+    .albums_item_timeline {
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+.albums_list_item:last-child{
+    cursor: default;
+}
+
+@media screen and (max-width: 600px) {
+    .albums_container {
+        min-width: 80vw;
+    }
+
+    .albums_list {
+        justify-content: center;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .albums_item_title {
+        min-width: 80vw;
+    }
+
+    .albums_item_image {
+        margin-top: 8px;
+        margin-bottom: 30px;
+    }
+
+    .albums_item_timeline {
+        padding: 4px;
+        font-size: 14px;
+    }
 }

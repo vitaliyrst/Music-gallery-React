@@ -2,5 +2,3 @@ export const HIDE_LOADER = 'APP/HIDE_LOADER';
 export const SHOW_LOADER = 'APP/SHOW_LOADER';
 
 export const FETCH_GROUP = 'GROUP/FETCH_GROUP';
-export const GET_BIOGRAPHY = 'GROUP/GET_BIOGRAPHY';
-export const GET_MEMBER = 'GROUP/GET_MEMBER';
