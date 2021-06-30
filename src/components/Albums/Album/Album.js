@@ -16,31 +16,38 @@ const Album = () => {
     useEffect(() => {
         album ? dispatch(hideLoader()) : dispatch(showLoader());
     }, [dispatch, album]);
-    console.log(album)
-    const getAlbumStructure = () => {
-        return album.description.map(data => {
-            const [tag] = Object.keys(data);
-            console.log(tag)
 
-            switch (tag) {
-                case 'p' :
-                    return data[tag].map((text, index) => (
-                        <p key={index} className='album_list_text'>
-                            {text}
-                        </p>
-                    ))
-                case 'music' :
-                    return data[tag].map((attribute, index) => (
-                        <iframe key={index} className='album_list_embed' title={album.title} {...attribute} />
-                    ))
-                case 'youtube' :
-                    return data[tag].map((attribute, index) => (
-                        <iframe key={index} className='album_list_youtube' title={album.title} {...attribute}/>
-                    ))
-                default :
-                    return null;
-            }
+    const getAlbumDescription = () => {
+        const description = album.description.find(item => {
+            return item.hasOwnProperty('p');
         });
+
+        return description['p'].map((text, index) => (
+            <p key={index} className='album_list_item_description'>
+                {text}
+            </p>
+        ));
+    }
+
+    const getAlbumVideo = () => {
+        const description = album.description.find(item => {
+            return item.hasOwnProperty('youtube');
+        });
+
+        return description['youtube'].map((attribute, index) => (
+            <div key={index} className='album_list_item_youtube_wrapper'>
+                <div className='album_list_item_youtube_title'>
+                    {attribute.title}
+                </div>
+
+                <iframe
+                    key={index}
+                    className='album_list_item_youtube'
+                    title={attribute.title}
+                    {...attribute}
+                />
+            </div>
+        ));
     }
 
     return (
@@ -49,12 +56,22 @@ const Album = () => {
                 <Fallback className='loader' type='Puff' color='#c41818' width={150} height={150}/> :
 
                 <div className='album_container'>
-                    {album.title}
-                    {getAlbumStructure()}
+                    <div className='album_list'>
+                        <div className='album_list_item_title'>
+                            {album.title}
+                        </div>
+
+                        <div className='album_list_item_description_container'>
+                            {getAlbumDescription()}
+                        </div>
+
+                        <div className='album_list_media'>Media</div>
+                        <div className='album_list_item_youtube_container'>
+                            {getAlbumVideo()}
+                        </div>
+                    </div>
                 </div>
-
             }
-
         </>
     );
 }

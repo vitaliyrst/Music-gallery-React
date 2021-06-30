@@ -46,7 +46,7 @@
 .navbar_list_item_link {
     font-family: Hellix, sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 32px;
 
     color: rgba(255, 255, 255, 0.7);
@@ -95,8 +95,8 @@
     }
 
     .navbar_list_item_link {
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 20px;
+        line-height: 26px;
     }
 }
 
@@ -109,6 +109,11 @@
         justify-content: center;
     }
 
+    .navbar_list_item{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
     .navbar_container {
         height: 60px;
         min-width: 370px;
@@ -119,8 +124,8 @@
     }
 
     .navbar_list_item_link {
-        font-size: 16px;
-        line-height: 22px;
+        font-size: 18px;
+        line-height: 24px;
     }
 }
 

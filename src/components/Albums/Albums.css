@@ -1,37 +1,51 @@
 .albums_container {
     max-width: 1200px;
+    margin: 0 auto;
+
+    position: relative;
 }
 
 .albums_list {
+    margin-top: 20px;
+    margin-bottom: 60px;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-    margin-top: 30px;
-    margin-bottom: 60px;
 }
 
 .albums_list_item {
     flex-basis: 30%;
-    cursor: pointer;
 
+    cursor: pointer;
+    text-overflow: clip;
+
+    overflow: hidden;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
 }
 
-.albums_item_link{
+.albums_list_item:last-child {
+    cursor: default;
+}
+
+.albums_item_link {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.7);
 }
 
 .albums_item_title {
     min-width: 262px;
+
     font-family: Hellix, sans-serif;
     font-weight: 700;
     font-size: 22px;
     line-height: 28px;
     text-align: center;
+    text-transform: uppercase;
+
+    color: rgba(196, 24, 24, 1);
 }
 
 .albums_item_image_container {
@@ -51,7 +65,7 @@
 .albums_item_timeline {
     padding: 10px;
 
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 
     background-color: rgba(0, 0, 0, 0.5);
@@ -82,13 +96,114 @@
     transform: perspective(800px) rotate3d(0, 0, 1, 0deg) scale(1);
 }
 
+.albums_item_additional_window {
+    display: none;
+
+    font-family: Hellix, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.albums_item_additional_window.show {
+    display: block;
+    animation: 0.8s ease-in-out show_additional_window;
+}
+
+@keyframes show_additional_window {
+    0% {
+        right: -50%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+.albums_item_additional_read {
+    padding: 10px;
+
+    background-color: rgba(41, 128, 217, 1);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 40px;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.albums_item_additional_listen {
+    padding: 10px;
+
+    background-color: #c41818;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 40px;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.albums_item_player_wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.albums_item_player_container {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: fixed;
+    top: 30vh;
+    left: 0;
+    right: 0;
+}
+
+.albums_item_player {
+    width: 450px;
+    height: 400px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.albums_item_player_hide {
+    width: 200px;
+    padding: 5px;
+
+    font-family: Nimbus-sans, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    background: linear-gradient(0deg, rgba(32, 32, 32, 1) 0%, rgba(33, 33, 33, 1) 50%, rgba(34, 34, 34, 1) 100%);;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: rgba(246, 246, 246, 255);
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    position: absolute;
+    right: 0;
+    top: -30px;
+}
+
 @media screen and (max-width: 1000px) {
     .albums_container {
         min-width: 700px;
     }
 
     .albums_list {
-        margin-top: 30px;
+        margin-top: 20px;
         margin-bottom: 40px;
     }
 
@@ -97,7 +212,6 @@
 
         font-size: 18px;
         line-height: 24px;
-
     }
 
     .albums_item_image {
@@ -107,12 +221,21 @@
 
     .albums_item_timeline {
         padding: 8px;
-        font-size: 16px;
+        font-size: 17px;
     }
-}
 
-.albums_list_item:last-child{
-    cursor: default;
+    .albums_item_additional_window {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .albums_item_additional_read {
+        padding: 8px;
+    }
+
+    .albums_item_additional_listen {
+        padding: 8px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -123,7 +246,11 @@
     .albums_list {
         justify-content: center;
         margin-top: 0;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .albums_list_item {
+        flex-basis: 95%;
     }
 
     .albums_item_title {
@@ -132,11 +259,65 @@
 
     .albums_item_image {
         margin-top: 8px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
     .albums_item_timeline {
-        padding: 4px;
-        font-size: 14px;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .albums_list_item:nth-child(odd):hover {
+        transition: 1s;
+        transform: perspective(800px) rotate3d(0, 0, 1, 3deg) scale(1.05);
+    }
+
+    .albums_list_item:nth-child(even):not(hover) {
+        transition: 1s;
+        transform: perspective(800px) rotate3d(0, 0, 1, 0deg) scale(1);
+    }
+
+    .albums_list_item:nth-child(even):hover {
+        transition: 1s;
+        transform: perspective(800px) rotate3d(0, 0, 1, -3deg) scale(1.05);
+    }
+
+    .albums_list_item:nth-child(odd):not(hover) {
+        transition: 1s;
+        transform: perspective(800px) rotate3d(0, 0, 1, 0deg) scale(1);
+    }
+
+    .albums_item_additional_window {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .albums_item_additional_read {
+        padding: 8px;
+    }
+
+    .albums_item_additional_listen {
+        padding: 8px;
+    }
+
+    .albums_item_player_container {
+        width: 375px;
+        margin-left: auto;
+        margin-right: auto;
+
+        position: fixed;
+        top: 30vh;
+        left: 0;
+        right: 0;
+    }
+
+    .albums_item_player {
+        width: 375px;
+        height: 375px;
+    }
+
+    .albums_item_player_hide {
+        width: 200px;
+        padding: 5px;
     }
 }

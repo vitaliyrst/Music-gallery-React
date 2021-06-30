@@ -40,13 +40,13 @@
 .footer_year {
     margin-top: 5px;
 
-    font-family: Hellix, sans-serif;
-    font-size: 14px;
+    font-family: Nimbus-sans, sans-serif;
     font-weight: 700;
+    font-size: 14px;
     line-height: 20px;
 
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 1);
 
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -70,14 +70,14 @@
     .footer_year {
         margin-top: 9px;
 
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 13px;
+        line-height: 22px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .app_footer {
-        height: 65px;
+        height: 60px;
     }
 
     .footer_container {
@@ -92,7 +92,7 @@
     .footer_year {
         margin-top: 7px;
 
-        font-size: 13px;
-        line-height: 19px;
+        font-size: 12px;
+        line-height: 20px;
     }
 }

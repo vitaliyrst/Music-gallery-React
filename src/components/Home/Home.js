@@ -27,7 +27,7 @@ const Home = () => {
                             {description[0]}
                         </div>
                         <div className='home_description'>
-                            {description[2]}
+                            {description[1]}
                         </div>
                     </div>
                     <div className='home_click_next'>

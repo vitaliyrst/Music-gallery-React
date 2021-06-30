@@ -1,6 +1,9 @@
 .members_container {
     width: 100%;
+    max-width: 1200px;
     padding: 20px;
+
+    margin: 0 auto;
 }
 
 .members_list {
@@ -9,7 +12,7 @@
 }
 
 .members_list_item {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .members_item_image {
@@ -20,10 +23,12 @@
 }
 
 .members_item_description {
-    margin-top: 30px;
+    margin-bottom: 30px;
 
-    font-size: 19px;
-    line-height: 25px;
+    font-family: Hellix, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 .members_item_name {
@@ -31,17 +36,21 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
+    color: rgba(196, 24, 24, 1);
+    margin-bottom: 17px;
+
     text-transform: uppercase;
     text-align: center;
 }
 
 @media screen and (max-width: 1000px) {
     .members_container {
-        padding: 30px;
+        width: 95%;
+        padding: 16px;
     }
 
     .members_list_item {
-        margin-bottom: 70px;
+        margin-bottom: 45px;
     }
 
     .members_item_image {
@@ -52,7 +61,7 @@
     }
 
     .members_item_description {
-        margin-top: 25px;
+        margin-bottom: 25px;
 
         font-size: 18px;
         line-height: 24px;
@@ -66,18 +75,12 @@
 
 @media screen and (max-width: 600px) {
     .members_container {
-        box-sizing: border-box;
-        max-width: 370px;
-        margin: 0 auto;
-        padding: 15px;
-    }
-
-    .members_list {
-        width: 100%;
+        width: 97%;
+        padding: 12px;
     }
 
     .members_list_item {
-        margin-bottom: 70px;
+        margin-bottom: 35px;
     }
 
     .members_item_image {
@@ -90,8 +93,8 @@
     .members_item_description {
         margin-top: 25px;
 
-        font-size: 16px;
-        line-height: 22px;
+        font-size: 17px;
+        line-height: 23px;
     }
 
     .members_item_name {
