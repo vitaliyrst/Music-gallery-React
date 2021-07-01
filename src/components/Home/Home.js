@@ -13,7 +13,7 @@ const Home = () => {
             <div className='home_container page'>
                 <video className='home_video_container' loop autoPlay muted width='1920' height='1080'>
                     <source
-                        src={'https://firebasestorage.googleapis.com/v0/b/music-gallery-f3ad4.appspot.com/o/video%2Fplayback.mp4?alt=media&token=473be39b-3c5a-48f7-8137-daa0cb548a19'}
+                        src={'https://firebasestorage.googleapis.com/v0/b/sum41-music.appspot.com/o/sum41%2Fvideo%2Fplayback.mp4?alt=media&token=535eb77e-e9e2-4ba9-b7d0-a1b18874aca4'}
                         type='video/mp4'/>
                 </video>
 
@@ -34,7 +34,7 @@ const Home = () => {
                         <Link className='home_click_link' to={'/albums'}>click to see more</Link>
                     </div>
                     <div className='home_poster'
-                         style={{backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/music-gallery-f3ad4.appspot.com/o/video%2Fposter.jpg?alt=media&token=98e76ff6-4eeb-4837-8ccf-0d05761e0a10)'}}/>
+                         style={{backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/sum41-music.appspot.com/o/sum41%2Fvideo%2Fposter.jpg?alt=media&token=8a49d403-c413-4416-b656-41f4c95eb2c9)'}}/>
                 </>
                 }
             </div>
