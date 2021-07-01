@@ -18,6 +18,10 @@ const News = () => {
 
     useEffect(() => {
         aos.init({duration: 2000});
+        window.scrollTo(0, 0);
+    }, [currentPage]);
+
+    useEffect(() => {
         dispatch(fetchNews());
     }, [dispatch]);
 
