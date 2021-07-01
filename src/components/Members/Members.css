@@ -19,7 +19,7 @@
     width: 350px;
     height: 350px;
     margin: 30px;
-    border: 5px solid rgba(196, 24, 24, 0.3);
+    border: 5px solid rgba(198, 0, 0, 255);
 }
 
 .members_item_description {
@@ -36,7 +36,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
-    color: rgba(198, 0, 0, 255);
+    color: rgba(200, 200, 200, 0.8);
     margin-bottom: 17px;
 
     text-transform: uppercase;

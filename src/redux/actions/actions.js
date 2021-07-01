@@ -1,8 +1,5 @@
 import database from "../../firebase/firebase";
-import {
-    FETCH_GROUP,
-    FETCH_NEWS,
-    HIDE_LOADER,
+import {FETCH_GROUP, FETCH_NEWS, FETCH_POST, HIDE_LOADER,
     SET_CURRENT_PAGE,
     SET_CURRENTS_POSTS_ON_PAGE,
     SHOW_LOADER
@@ -51,6 +48,23 @@ export const fetchNews = () => async (dispatch) => {
         dispatch(hideLoader());
     } catch (e) {
         console.log('Fetch News error', e.message);
+        dispatch(hideLoader());
+    }
+}
+
+export const fetchPost = (id) => async (dispatch) => {
+    try {
+        dispatch(showLoader());
+        const response = await database.collection('/posts').doc(id);
+        const data = await response.get();
+        let result;
+        if (data.exists) {
+            result = data.data();
+        }
+        dispatch({type: FETCH_POST, payload: result});
+        dispatch(hideLoader());
+    } catch (e) {
+        console.log('Fetch Post error', e.message);
         dispatch(hideLoader());
     }
 }

@@ -5,6 +5,7 @@ import {getGroupAlbums, getLoading} from "../../redux/selectors";
 import {hideLoader, showLoader} from "../../redux/actions/actions";
 import Fallback from "../Loader/Loader";
 import {Link} from "react-router-dom";
+import aos from 'aos';
 
 const Albums = () => {
     const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Albums = () => {
     const [divIndex, setDivIndex] = useState(null);
 
     useEffect(() => {
+        aos.init({duration: 2000});
         albums ? dispatch(hideLoader()) : dispatch(showLoader());
     }, [dispatch, albums]);
 
@@ -67,6 +69,7 @@ const Albums = () => {
 
                         {albums.map((album, index) => (
                             <div key={album.id} className='albums_list_item'
+                                 data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
                                  onPointerDown={(eo) => handlePointerDown(eo, index)}>
 
                                 <div className='albums_item_title'>

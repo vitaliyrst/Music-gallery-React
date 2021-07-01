@@ -38,3 +38,7 @@ export const getCurrentPostsOnPage = (state) => {
 export const getTotalPosts = (state) => {
     return state.news.news.length;
 }
+
+export const getPost = (state) => {
+    return state.news.post;
+}

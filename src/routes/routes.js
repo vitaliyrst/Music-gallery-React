@@ -42,7 +42,7 @@ const routes = [
         exact: true
     },
     {
-        path: '/news/:post',
+        path: '/news/:id',
         Component: Post,
         exact: true
     },

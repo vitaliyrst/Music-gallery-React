@@ -1,46 +1,48 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import './Post.css';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Fallback from "../../Loader/Loader";
+import {getLoading, getPost} from "../../../redux/selectors";
+import {fetchPost} from "../../../redux/actions/actions";
 
 const Post = () => {
-    const {id} = useParams();
-    const [loading, setLoading] = useState(true);
-
-    const post = useSelector(({firestore: {data}}) => data.posts && data.posts[id]);
+    const params = useParams();
+    const dispatch = useDispatch();
+    const loading = useSelector(getLoading);
+    const post = useSelector(getPost);
 
     useEffect(() => {
-        if (post) {
-            setLoading(false);
-        }
-    }, [post]);
+        dispatch(fetchPost(params.id));
+    }, [params.id, dispatch]);
 
     const getPostDescription = () => {
-        return post.description.map(data => {
-            const [tag] = Object.keys(data);
+        if (!loading && post.description) {
+            return post.description.map(data => {
+                const [tag] = Object.keys(data);
 
-            switch (tag) {
-                case 'p' :
-                    return data[tag].map((text, index) => (
-                        <p key={index} className='post_block'>
-                            {text}
-                        </p>
-                    ));
-                case 'iframe' :
-                    return data[tag].map((attribute, index) => (
-                        <iframe key={index} className='post_youtube' title={post.title} {...attribute}/>
-                    ));
-                default:
-                    return null;
-            }
-        });
+                switch (tag) {
+                    case 'p' :
+                        return data[tag].map((text, index) => (
+                            <p key={index} className='post_block'>
+                                {text}
+                            </p>
+                        ));
+                    case 'iframe' :
+                        return data[tag].map((attribute, index) => (
+                            <iframe key={index} className='post_youtube' title={post.title} {...attribute}/>
+                        ));
+                    default:
+                        return null;
+                }
+            });
+        }
     }
 
     return (
         <>
             {loading ?
-                <Fallback className='loader' type='Puff' color='#000000' width={150} height={150}/> :
+                <Fallback className='loader' type='Puff' color='#002D67' width={175} height={175}/> :
 
                 <div className='post_container'>
                     <div className='post_image' style={{backgroundImage: `url("${post.image}")`}}>
@@ -56,7 +58,6 @@ const Post = () => {
                 </div>
             }
         </>
-
     )
 }
 

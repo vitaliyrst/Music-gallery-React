@@ -18,7 +18,11 @@ const News = () => {
 
     useEffect(() => {
         aos.init({duration: 2000});
-        window.scrollTo(0, 0);
+
+        if (/Android|iPhone|iPad|Windows Phone/i.test(navigator.userAgent)) {
+            window.scroll({top: 0, behavior: 'smooth'});
+        }
+
     }, [currentPage]);
 
     useEffect(() => {
@@ -26,7 +30,7 @@ const News = () => {
     }, [dispatch]);
 
     useEffect(() => {
-        if (!loading) {
+        if (!loading && posts.length) {
             const indexOfLastPost = currentPage * postsPerPage;
             const indexOfFirstPost = indexOfLastPost - postsPerPage;
             dispatch(setCurrentPostsOnPage(posts.slice(indexOfFirstPost, indexOfLastPost)));
@@ -38,7 +42,7 @@ const News = () => {
             <div key={post.id}
                  className='news_list_item'
                  data-aos={index % 2 === 0 ? 'zoom-in-left' : 'zoom-in-right'}>
-                <Link to={`/news/${post.title}`}>
+                <Link to={`/news/${post.id}`}>
                     <div className='news_list_item_image_container' style={{backgroundImage: `url("${post.image}")`}}>
                         <div className='news_list_item_published'>
                             {post.author} | Published: {post.published}
