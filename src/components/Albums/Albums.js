@@ -54,27 +54,20 @@ const Albums = () => {
         }
     }
 
- /*   const handlePointerLeave = (index) => {
-        const div = additionalRefs.current.find((element, i) => i === index);
-        div.classList.remove('show');
-        div.classList.add('hide');
-    }*/
-
     const handleClickPlayer = (state, index, description) => setShowPlayer({...showPlayer, state, index, description});
     const handleHidePlayer = () => setShowPlayer({state: false, index: null, description: null})
 
     return (
         <>
             {loading ?
-                <Fallback className='loader' type='Puff' color='#c41818' width={150} height={150}/> :
+                <Fallback className='loader' type='Puff' color='#002D67' width={175} height={175}/> :
 
                 <div className='albums_container page'>
                     <div className='albums_list'>
 
                         {albums.map((album, index) => (
                             <div key={album.id} className='albums_list_item'
-                                 onPointerDown={(eo) => handlePointerDown(eo, index)}
-                                /*onPointerOut={() => handlePointerLeave(index)}*/>
+                                 onPointerDown={(eo) => handlePointerDown(eo, index)}>
 
                                 <div className='albums_item_title'>
                                     {album.title}

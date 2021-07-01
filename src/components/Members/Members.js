@@ -20,7 +20,7 @@ const Members = () => {
     return (
         <>
             {loading ?
-                <Fallback className='loader' type='Puff' color='#c41818' width={150} height={150}/> :
+                <Fallback className='loader' type='Puff' color='#002D67' width={175} height={175}/> :
 
                 <div className='members_container page'>
                     <div className='members_list'>

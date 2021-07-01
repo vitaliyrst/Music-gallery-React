@@ -62,7 +62,7 @@
     font-size: 24px;
     line-height: 30px;
 
-    color: rgba(196, 24, 24, 0.9);
+    color: rgba(198, 0, 0, 255);
     text-transform: uppercase;
     text-align: center;
 
@@ -137,7 +137,7 @@
 }
 
 .home_click_link:hover {
-    color: rgba(196, 24, 24, 0.9);
+    color: rgba(198, 0, 0, 255);
     animation: 1s linear home_click_link_hover;
 }
 
@@ -146,7 +146,7 @@
         color: rgba(255, 255, 255, 0.8);
     }
     100% {
-        color: rgba(196, 24, 24, 0.9);
+        color: rgba(198, 0, 0, 255);
     }
 }
 

@@ -1,33 +1,33 @@
 .pagination_page_container {
-    width: 50%;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
+    width: 60%;
+    margin: 20px auto 50px;
 }
 
 .pagination_page_list {
     margin: 0 auto;
     padding: 0;
+
     list-style: none;
+
     display: flex;
     justify-content: center;
 }
 
 .pagination_page_item {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
     margin-left: 15px;
     margin-right: 15px;
 
-    font-family: Roboto, sans-serif;
+    font-family: Nimbus-sans, sans-serif;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
+    color: rgba(255,255,255, 1);
 
-    background-color: #3498DB;
-    border: 1px solid #3498DB;
+    background-color: rgba(0, 45, 103, 255);
+    border: 1px solid rgba(0, 45, 103, 255);
     border-radius: 4px;
 
     display: flex;
@@ -42,7 +42,6 @@
 }
 
 .pagination_page_item:hover {
-    color: #e7e6e2;
     border-color: #2980D9;
     background-color: #2980D9;
 }
@@ -51,21 +50,27 @@
     transform: translateY(-2px);
 }
 
+.pagination_page_item.active{
+    background-color: rgba(198, 0, 0, 255);
+    border-color: rgba(198, 0, 0, 255);
+}
+
 @media screen and (max-width: 1000px){
     .pagination_page_container {
         width: 70%;
-        margin-bottom: 45px;
+        margin-top: 0;
+        margin-bottom: 50px;
     }
 
     .pagination_page_item {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
 
         margin-left: 12px;
         margin-right: 12px;
 
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 22px;
     }
 }
 
@@ -74,18 +79,19 @@
     .pagination_page_container {
         width: 80%;
         min-width: 350px;
-        margin-bottom: 30px;
+        margin-top: -10px;
+        margin-bottom: 40px;
     }
 
     .pagination_page_item {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
 
         margin-left: 10px;
         margin-right: 10px;
 
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 14px;
+        line-height: 20px;
     }
 }
 

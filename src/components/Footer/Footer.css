@@ -10,7 +10,7 @@
     height: 85px;
     margin: 0 auto;
 
-    background-color: #00a86b;
+    background-color: rgba(0, 45, 103, 255);
 
     display: flex;
     flex-direction: column;

@@ -1,42 +1,66 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import './News.css';
-import Posts from "./Posts/Posts";
-import Pagination from "../Pagination/Pagination";
+import Pagination from "./Pagination/Pagination";
 import Fallback from "../Loader/Loader";
-import {shallowEqual, useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchNews, setCurrentPostsOnPage} from "../../redux/actions/actions";
+import {getCurrentPage, getCurrentPostsOnPage, getLoading, getNews} from "../../redux/selectors";
+import {Link} from "react-router-dom";
+import aos from 'aos';
 
 const News = () => {
+    const dispatch = useDispatch();
+    const posts = useSelector(getNews);
+    const loading = useSelector(getLoading);
+    const currentPage = useSelector(getCurrentPage);
+    const currentPostsOnPage = useSelector(getCurrentPostsOnPage);
     const postsPerPage = 4;
-    const [loading, setLoading] = useState(true);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [currentPosts, setCurrentPosts] = useState([]);
-
-    const posts = useSelector(({firestore: {ordered}}) => ordered.posts, shallowEqual);
 
     useEffect(() => {
-        if (posts) {
-            setLoading(false);
+        aos.init({duration: 2000});
+        dispatch(fetchNews());
+    }, [dispatch]);
+
+    useEffect(() => {
+        if (!loading) {
             const indexOfLastPost = currentPage * postsPerPage;
             const indexOfFirstPost = indexOfLastPost - postsPerPage;
-            setCurrentPosts(posts.slice(indexOfFirstPost, indexOfLastPost));
+            dispatch(setCurrentPostsOnPage(posts.slice(indexOfFirstPost, indexOfLastPost)));
         }
-    }, [posts, currentPage]);
+    }, [loading, posts, currentPage, dispatch]);
 
-    const handlePaginate = (pageNumber) => setCurrentPage(pageNumber);
+    const getPostsOnPage = () => {
+        return currentPostsOnPage.map((post, index) => (
+            <div key={post.id}
+                 className='news_list_item'
+                 data-aos={index % 2 === 0 ? 'zoom-in-left' : 'zoom-in-right'}>
+                <Link to={`/news/${post.title}`}>
+                    <div className='news_list_item_image_container' style={{backgroundImage: `url("${post.image}")`}}>
+                        <div className='news_list_item_published'>
+                            {post.author} | Published: {post.published}
+                        </div>
+                    </div>
+                </Link>
+                <div className='news_list_item_title'>
+                    {post.title}
+                </div>
+            </div>
+        ));
+    }
 
     return (
         <>
             {loading ?
-                <Fallback className='loader' type='Puff' color='#000000' width={150} height={150}/> :
-                <div className='news_container page'>
-                    <Posts posts={currentPosts}/>
-                    <Pagination
-                        postsPerPage={postsPerPage}
-                        totalPosts={posts.length}
-                        currentPage={currentPage}
-                        onPaginate={handlePaginate}
-                    />
-                </div>
+                <Fallback className='loader' type='Puff' color='#002D67' width={175} height={175}/> :
+                <>
+                    <div className='news_container page'>
+                        <div className='news_list'>
+                            {getPostsOnPage()}
+                        </div>
+                    </div>
+
+                    <Pagination/>
+                </>
             }
         </>
     );

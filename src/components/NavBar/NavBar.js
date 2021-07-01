@@ -9,7 +9,7 @@ const NavBar = () => {
             <nav className='navbar_container'>
 
                 <NavLink className='navbar_logo_link' to='/'>
-                    <div className='navbar_logo' style={{backgroundImage: 'url("/assets/images/logo/logo.png")'}}/>
+                    <div className='navbar_logo' style={{backgroundImage: 'url("/assets/images/logo/sum41.png")'}}/>
                 </NavLink>
 
                 <ul className='navbar_list'>
