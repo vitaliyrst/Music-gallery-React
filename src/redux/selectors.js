@@ -3,6 +3,10 @@ export const getLoading = (state) => {
     return state.app.loading;
 }
 
+export const getOS = (state) => {
+    return state.app.os;
+}
+
 //GROUP
 export const getGroupDescription = (state) => {
     return state.sum41.group.description;

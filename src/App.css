@@ -12,28 +12,6 @@
     position: relative;
 }
 
-.page-enter {
-    position: absolute;
-    opacity: 0;
-}
-
-.page-enter-active {
-    position: absolute;
-    opacity: 1;
-    transition: opacity 500ms;
-}
-
-.page-exit {
-    position: absolute;
-    opacity: 1;
-}
-
-.page-exit-active {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 500ms;
-}
-
 @media screen and (max-width: 1000px) {
     .app_main {
         width: 90vw;

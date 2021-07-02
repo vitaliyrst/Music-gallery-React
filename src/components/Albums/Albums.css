@@ -34,17 +34,17 @@
 
 .albums_item_link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(200, 200, 200, 0.8);
 }
 
 .albums_item_title {
     width: 100%;
     min-width: 262px;
 
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 22px;
+    line-height: 28px;
     text-align: center;
     text-transform: uppercase;
 
@@ -69,10 +69,10 @@
     padding: 10px;
 
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
 
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(200,200,200, 0.8);
 
     position: absolute;
     bottom: 0;
@@ -102,7 +102,7 @@
 .albums_item_additional_window {
     display: none;
 
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
@@ -129,7 +129,7 @@
 .albums_item_additional_read {
     padding: 10px;
 
-    color: rgba(255,255,255, 0.8);
+    color: rgba(200,200,200, 0.8);
     background-color: rgba(0, 45, 103, 255);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 40px;
@@ -141,7 +141,7 @@
 .albums_item_additional_listen {
     padding: 10px;
 
-    color: rgba(255,255,255, 0.8);
+    color: rgba(200,200,200, 0.8);
     background-color: rgba(198, 0, 0, 255);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 40px;
@@ -183,7 +183,7 @@
     width: 200px;
     padding: 5px;
 
-    font-family: Nimbus-sans, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
@@ -215,7 +215,7 @@
     .albums_item_title {
         min-width: 230px;
 
-        font-size: 20px;
+        font-size: 18px;
         line-height: 26px;
     }
 

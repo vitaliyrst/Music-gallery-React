@@ -1,7 +1,8 @@
 import database from "../../firebase/firebase";
-import {FETCH_GROUP, FETCH_NEWS, FETCH_POST, HIDE_LOADER,
+import {
+    FETCH_GROUP, FETCH_NEWS, FETCH_POST, HIDE_LOADER,
     SET_CURRENT_PAGE,
-    SET_CURRENTS_POSTS_ON_PAGE,
+    SET_CURRENTS_POSTS_ON_PAGE, SET_OS,
     SHOW_LOADER
 } from "../types";
 
@@ -16,6 +17,13 @@ export const showLoader = () => {
 export const hideLoader = () => {
     return {
         type: HIDE_LOADER
+    }
+}
+
+export const setOS = (bool) => {
+    return {
+        type: SET_OS,
+        payload : bool
     }
 }
 

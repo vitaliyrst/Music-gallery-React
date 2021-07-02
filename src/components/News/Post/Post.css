@@ -15,81 +15,85 @@
     background-position: center;
     background-repeat: no-repeat;
 
+    border-radius: 10px;
+
     position: relative;
 }
 
 .post_additional_info_container {
     box-sizing: border-box;
-    margin-left: 40px;
 
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
 
-    font-family: Roboto, sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 700;
 
-    color: #FFFFFF;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .post_title {
-    font-size: 34px;
+    margin-top: 10px;
+    margin-left: 20px;
+
+    font-size: 26px;
     line-height: 40px;
     text-transform: uppercase;
 }
 
 .post_author {
     margin-top: 10px;
-    font-weight: 500;
-    font-size: 12px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 .post_description {
-    width: 750px;
+    width: 900px;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+
+    margin-bottom: 40px;
 }
 
 .post_block {
-    font-family: Inter, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 500;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 24px;
 }
 
 .post_youtube {
     width: 750px;
     height: 400px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px auto 40px;
 }
 
 @media screen and (max-width: 1000px) {
     .post_image {
-        width: 650px;
-        height: 350px;
-    }
-
-    .post_additional_info_container {
-        margin-left: 15px;
-        bottom: 15px;
+        width: 800px;
+        height: 400px;
     }
 
     .post_title {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 28px;
     }
 
     .post_author {
         margin-top: 8px;
         font-weight: 500;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .post_description {
-        width: 550px;
+        width: 760px;
     }
 
     .post_block {
@@ -98,7 +102,7 @@
     }
 
     .post_youtube {
-        width: 550px;
+        width: 600px;
         height: 350px;
         margin-top: 30px;
         margin-bottom: 30px;
@@ -107,39 +111,38 @@
 
 @media screen and (max-width: 600px) {
     .post_image {
-        width: 95vw;
+        width: 100vw;
         height: 200px;
     }
 
-    .post_additional_info_container {
-        margin-left: 7px;
-        bottom: 7px;
-    }
-
     .post_title {
-        font-size: 14px;
-        line-height: 16px;
+        margin-top: 5px;
+        margin-left: 5px;
+        font-size: 17px;
+        line-height: 20px;
     }
 
     .post_author {
+        margin-left: 5px;
+        margin-bottom: 5px;
         margin-top: 3px;
         font-weight: 500;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .post_description {
-        width: 90vw;
+        width: 95vw;
     }
 
     .post_block {
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 16px;
+        line-height: 20px;
     }
 
     .post_youtube {
-        width: 90vw;
+        width: 93vw;
         height: 250px;
         margin-top: 25px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 }

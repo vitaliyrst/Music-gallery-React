@@ -1,5 +1,6 @@
 import React from "react";
 import './Pagination.css';
+
 import {useDispatch, useSelector} from "react-redux";
 import {getCurrentPage, getTotalPosts} from "../../../redux/selectors";
 import {setCurrentPage} from "../../../redux/actions/actions";
@@ -8,6 +9,7 @@ const Pagination = () => {
     const dispatch = useDispatch();
     const totalPosts = useSelector(getTotalPosts);
     const currentPage = useSelector(getCurrentPage);
+
     const postsPerPage = 4;
     const totalPages = Math.ceil(totalPosts / postsPerPage);
 

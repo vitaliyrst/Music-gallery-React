@@ -1,19 +1,24 @@
 import React, {useEffect, useRef, useState} from "react";
 import './Albums.css';
+
+import {Link} from "react-router-dom";
+import aos from 'aos';
+import "aos/dist/aos.css";
+
 import {useDispatch, useSelector} from "react-redux";
 import {getGroupAlbums, getLoading} from "../../redux/selectors";
 import {hideLoader, showLoader} from "../../redux/actions/actions";
+
 import Fallback from "../Loader/Loader";
-import {Link} from "react-router-dom";
-import aos from 'aos';
 
 const Albums = () => {
-    const dispatch = useDispatch();
-    const loading = useSelector(getLoading);
-    const albums = useSelector(getGroupAlbums);
     const additionalRefs = useRef([]);
     const [showPlayer, setShowPlayer] = useState({state: false, index: null, description: null});
     const [divIndex, setDivIndex] = useState(null);
+
+    const dispatch = useDispatch();
+    const loading = useSelector(getLoading);
+    const albums = useSelector(getGroupAlbums);
 
     useEffect(() => {
         aos.init({duration: 2000});
@@ -64,9 +69,8 @@ const Albums = () => {
             {loading ?
                 <Fallback className='loader' type='Puff' color='#002D67' width={175} height={175}/> :
 
-                <div className='albums_container page'>
+                <div className='albums_container'>
                     <div className='albums_list'>
-
                         {albums.map((album, index) => (
                             <div key={album.id} className='albums_list_item'
                                  data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
@@ -92,15 +96,14 @@ const Albums = () => {
 
                                         <div className='albums_item_additional_listen'
                                              onClick={() => handleClickPlayer(true, index, album.description[1])}
-                                        >
-                                            Show Player
+                                        >Show Player
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         ))}
                         <div className='albums_list_item'/>
+
                         {showPlayer.state &&
                         <div className='albums_item_player_wrapper'>
                             <div className='albums_item_player_container'>
@@ -109,7 +112,9 @@ const Albums = () => {
                                 </div>
                                 {getPlayer(showPlayer.description)}
                             </div>
-                        </div>}
+                        </div>
+                        }
+
                     </div>
                 </div>
             }

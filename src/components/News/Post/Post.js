@@ -1,13 +1,17 @@
 import React, {useEffect} from "react";
-import {useParams} from 'react-router-dom';
 import './Post.css';
+
+import {useParams} from 'react-router-dom';
+
 import {useDispatch, useSelector} from "react-redux";
-import Fallback from "../../Loader/Loader";
 import {getLoading, getPost} from "../../../redux/selectors";
 import {fetchPost} from "../../../redux/actions/actions";
 
+import Fallback from "../../Loader/Loader";
+
 const Post = () => {
     const params = useParams();
+
     const dispatch = useDispatch();
     const loading = useSelector(getLoading);
     const post = useSelector(getPost);

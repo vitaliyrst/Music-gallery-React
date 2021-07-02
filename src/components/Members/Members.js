@@ -1,11 +1,14 @@
 import React, {useEffect} from "react";
 import './Members.css';
-import {useDispatch, useSelector} from "react-redux";
-import {hideLoader, showLoader} from "../../redux/actions/actions";
-import Fallback from "../Loader/Loader";
-import {getGroupBiography, getLoading} from "../../redux/selectors";
+
 import aos from 'aos';
 import "aos/dist/aos.css";
+
+import {useDispatch, useSelector} from "react-redux";
+import {hideLoader, showLoader} from "../../redux/actions/actions";
+import {getGroupBiography, getLoading} from "../../redux/selectors";
+
+import Fallback from "../Loader/Loader";
 
 const Members = () => {
     const dispatch = useDispatch();

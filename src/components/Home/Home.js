@@ -1,21 +1,25 @@
 import React from "react";
 import './Home.css';
+
 import {Link} from "react-router-dom";
+
 import {useSelector} from "react-redux";
-import {getGroupDescription, getLoading} from "../../redux/selectors";
+import {getGroupDescription, getLoading, getOS} from "../../redux/selectors";
 
 const Home = () => {
     const description = useSelector(getGroupDescription);
     const loading = useSelector(getLoading);
+    const os = useSelector(getOS);
 
     return (
         <>
             <div className='home_container page'>
+                {!os &&
                 <video className='home_video_container' loop autoPlay muted width='1920' height='1080'>
                     <source
                         src={'https://firebasestorage.googleapis.com/v0/b/sum41-music.appspot.com/o/sum41%2Fvideo%2Fplayback.mp4?alt=media&token=535eb77e-e9e2-4ba9-b7d0-a1b18874aca4'}
                         type='video/mp4'/>
-                </video>
+                </video>}
 
                 {!loading &&
                 <>

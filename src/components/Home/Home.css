@@ -33,7 +33,7 @@
     width: 600px;
     height: 465px;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
 
     position: absolute;
     right: -1vw;
@@ -57,7 +57,7 @@
 .home_preview {
     padding: 10px;
 
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
@@ -87,7 +87,7 @@
     margin-left: 5px;
     padding: 10px;
 
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
@@ -123,7 +123,7 @@
 }
 
 .home_click_link {
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
@@ -224,18 +224,18 @@
 
     .home_preview_container {
         width: 375px;
-        height: 475px;
+        height: 540px;
     }
 
     .home_preview {
         padding: 2px;
 
-        font-size: 18px;
+        font-size: 17px;
         line-height: 24px;
     }
 
     .home_description {
-        margin-top: 8px;
+        margin-top: 4px;
         margin-left: 4px;
         padding: 8px;
 
@@ -243,10 +243,14 @@
         line-height: 22px;
     }
 
+    .home_click_next{
+        bottom: 5%;
+    }
+
     .home_click_link {
         padding: 4px;
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 17px;
+        line-height: 23px;
     }
 
     .home_poster {

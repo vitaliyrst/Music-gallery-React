@@ -1,29 +1,32 @@
 import React, {useEffect} from "react";
 import './News.css';
-import Pagination from "./Pagination/Pagination";
-import Fallback from "../Loader/Loader";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchNews, setCurrentPostsOnPage} from "../../redux/actions/actions";
-import {getCurrentPage, getCurrentPostsOnPage, getLoading, getNews} from "../../redux/selectors";
+
 import {Link} from "react-router-dom";
 import aos from 'aos';
+import "aos/dist/aos.css";
+
+import {useDispatch, useSelector} from "react-redux";
+import {fetchNews, setCurrentPostsOnPage} from "../../redux/actions/actions";
+import {getCurrentPage, getCurrentPostsOnPage, getLoading, getNews, getOS} from "../../redux/selectors";
+
+import Pagination from "./Pagination/Pagination";
+import Fallback from "../Loader/Loader";
 
 const News = () => {
     const dispatch = useDispatch();
     const posts = useSelector(getNews);
     const loading = useSelector(getLoading);
     const currentPage = useSelector(getCurrentPage);
+    const os = useSelector(getOS);
     const currentPostsOnPage = useSelector(getCurrentPostsOnPage);
     const postsPerPage = 4;
 
     useEffect(() => {
         aos.init({duration: 2000});
-
-        if (/Android|iPhone|iPad|Windows Phone/i.test(navigator.userAgent)) {
+        if (os) {
             window.scroll({top: 0, behavior: 'smooth'});
         }
-
-    }, [currentPage]);
+    }, [os, currentPage]);
 
     useEffect(() => {
         dispatch(fetchNews());

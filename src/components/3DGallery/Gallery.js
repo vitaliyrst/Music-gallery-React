@@ -4,7 +4,7 @@ import './Gallery.css';
 const Gallery = () => {
 
     return (
-        <div className='gallery_container page'>
+        <div style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '30%'}} className='gallery_container'>
             Gallery
         </div>
     );

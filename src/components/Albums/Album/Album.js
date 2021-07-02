@@ -1,15 +1,18 @@
 import React, {useEffect} from "react";
 import './Album.css';
+
 import {useDispatch, useSelector} from "react-redux";
 import {getGroupAlbum, getLoading} from "../../../redux/selectors";
 import {hideLoader, showLoader} from "../../../redux/actions/actions";
+
 import {useParams} from "react-router";
+
 import Fallback from "../../Loader/Loader";
 
 const Album = () => {
     const params = useParams();
-    const dispatch = useDispatch();
 
+    const dispatch = useDispatch();
     const loading = useSelector(getLoading);
     const album = useSelector(getGroupAlbum(params.album));
 

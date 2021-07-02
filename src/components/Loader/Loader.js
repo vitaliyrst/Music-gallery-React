@@ -1,6 +1,7 @@
 import React from "react";
-import Loader from "react-loader-spinner";
 import './Loader.css';
+
+import Loader from "react-loader-spinner";
 
 const Fallback = ({type, color, width, height}) => {
     return (

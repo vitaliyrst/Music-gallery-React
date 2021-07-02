@@ -11,11 +11,11 @@
 }
 
 .album_list_item_title {
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
-    color: rgba(198, 0, 0, 255);
+    color: rgba(200, 200, 200, 0.8);
 
     text-align: center;
     text-transform: uppercase;
@@ -25,7 +25,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
@@ -38,7 +38,7 @@
 .album_list_media {
     margin-top: 60px;
 
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
@@ -65,10 +65,20 @@
     margin-left: 10px;
     margin-bottom: 10px;
 
-    font-family: Hellix, sans-serif;
-    font-weight: 700;
+    font-family: IBMPlexSans, sans-serif;
+    font-weight: 500;
     font-size: 20px;
     line-height: 26px;
+
+    text-transform: uppercase;
+}
+
+.album_list_item_youtube_wrapper:nth-child(even) {
+    text-align: right;
+}
+
+.album_list_item_youtube_wrapper:nth-child(odd) {
+    text-align: left;
 }
 
 .album_list_item_youtube {
@@ -76,7 +86,7 @@
     margin-bottom: 50px;
 }
 
-.album_list_item_youtube_wrapper::before{
+.album_list_item_youtube_wrapper::before {
     flex: auto;
 }
 
@@ -136,7 +146,7 @@
         margin-bottom: 40px;
     }
 
-    .album_list_item_youtube_wrapper::before{
+    .album_list_item_youtube_wrapper::before {
         flex: auto;
     }
 }
@@ -198,7 +208,7 @@
         margin-bottom: 25px;
     }
 
-    .album_list_item_youtube_wrapper::before{
+    .album_list_item_youtube_wrapper::before {
         flex: auto;
     }
 }

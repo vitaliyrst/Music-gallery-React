@@ -11,9 +11,27 @@
 }
 
 @font-face {
-    font-family: 'Nimbus-sans';
+    font-family: 'IBMPlexSans';
+    font-weight: 400;
+    src: local('IBMPlexSans'), url(./fonts/IBMPlexSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSans';
+    font-weight: 500;
+    src: local('IBMPlexSans'), url(./fonts/IBMPlexSans-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSans';
+    font-weight: 600;
+    src: local('IBMPlexSans'), url(./fonts/IBMPlexSans-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSans';
     font-weight: 700;
-    src: local('Nimbus-sans'), url(./fonts/NimbusSanL-Bol.ttf) format('truetype');
+    src: local('IBMPlexSans'), url(./fonts/IBMPlexSans-Bold.ttf) format('truetype');
 }
 
 * {
@@ -35,7 +53,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     background-repeat: repeat;
 
-    font-family: Hellix, sans-serif;
+    font-family: IBMPlexSans, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
