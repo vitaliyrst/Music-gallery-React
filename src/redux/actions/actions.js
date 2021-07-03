@@ -1,7 +1,6 @@
 import database from "../../firebase/firebase";
 import {
     FETCH_GROUP, FETCH_NEWS, FETCH_POST, HIDE_LOADER,
-    SET_CURRENT_PAGE,
     SET_CURRENTS_POSTS_ON_PAGE, SET_OS,
     SHOW_LOADER
 } from "../types";
@@ -23,7 +22,7 @@ export const hideLoader = () => {
 export const setOS = (bool) => {
     return {
         type: SET_OS,
-        payload : bool
+        payload: bool
     }
 }
 
@@ -60,27 +59,22 @@ export const fetchNews = () => async (dispatch) => {
     }
 }
 
-export const fetchPost = (id) => async (dispatch) => {
+export const fetchPost = (title) => async (dispatch) => {
     try {
         dispatch(showLoader());
-        const response = await database.collection('/posts').doc(id);
+        const response = await database.collection('/posts').where('title', '==', title);
         const data = await response.get();
-        let result;
-        if (data.exists) {
-            result = data.data();
-        }
-        dispatch({type: FETCH_POST, payload: result});
+        const result = [];
+
+        data.docs.forEach(item => {
+            result.push(item.data());
+        });
+
+        dispatch({type: FETCH_POST, payload: result[0]});
         dispatch(hideLoader());
     } catch (e) {
         console.log('Fetch Post error', e.message);
         dispatch(hideLoader());
-    }
-}
-
-export const setCurrentPage = (page) => {
-    return {
-        type: SET_CURRENT_PAGE,
-        payload: page
     }
 }
 

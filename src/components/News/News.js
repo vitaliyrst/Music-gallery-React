@@ -1,32 +1,33 @@
 import React, {useEffect} from "react";
 import './News.css';
 
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import aos from 'aos';
 import "aos/dist/aos.css";
 
 import {useDispatch, useSelector} from "react-redux";
 import {fetchNews, setCurrentPostsOnPage} from "../../redux/actions/actions";
-import {getCurrentPage, getCurrentPostsOnPage, getLoading, getNews, getOS} from "../../redux/selectors";
+import {getCurrentPostsOnPage, getLoading, getNews, getOS} from "../../redux/selectors";
 
 import Pagination from "./Pagination/Pagination";
 import Fallback from "../Loader/Loader";
 
 const News = () => {
+    const {page} = useParams();
+    const postsPerPage = 4;
+
     const dispatch = useDispatch();
     const posts = useSelector(getNews);
     const loading = useSelector(getLoading);
-    const currentPage = useSelector(getCurrentPage);
     const os = useSelector(getOS);
     const currentPostsOnPage = useSelector(getCurrentPostsOnPage);
-    const postsPerPage = 4;
 
     useEffect(() => {
         aos.init({duration: 2000});
         if (os) {
             window.scroll({top: 0, behavior: 'smooth'});
         }
-    }, [os, currentPage]);
+    }, [os, page]);
 
     useEffect(() => {
         dispatch(fetchNews());
@@ -34,18 +35,18 @@ const News = () => {
 
     useEffect(() => {
         if (!loading && posts.length) {
-            const indexOfLastPost = currentPage * postsPerPage;
+            const indexOfLastPost = page * postsPerPage;
             const indexOfFirstPost = indexOfLastPost - postsPerPage;
             dispatch(setCurrentPostsOnPage(posts.slice(indexOfFirstPost, indexOfLastPost)));
         }
-    }, [loading, posts, currentPage, dispatch]);
+    }, [page, loading, posts, dispatch]);
 
     const getPostsOnPage = () => {
         return currentPostsOnPage.map((post, index) => (
             <div key={post.id}
                  className='news_list_item'
                  data-aos={index % 2 === 0 ? 'zoom-in-left' : 'zoom-in-right'}>
-                <Link to={`/news/${post.id}`}>
+                <Link to={`/news/${page}/${post.title}`}>
                     <div className='news_list_item_image_container' style={{backgroundImage: `url("${post.image}")`}}>
                         <div className='news_list_item_published'>
                             {post.author} | Published: {post.published}

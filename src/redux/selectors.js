@@ -31,10 +31,6 @@ export const getNews = (state) => {
     return state.news.news;
 }
 
-export const getCurrentPage = (state) => {
-    return state.news.currentPage;
-}
-
 export const getCurrentPostsOnPage = (state) => {
     return state.news.currentPostsOnPage;
 }

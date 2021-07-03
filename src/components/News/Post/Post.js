@@ -10,15 +10,15 @@ import {fetchPost} from "../../../redux/actions/actions";
 import Fallback from "../../Loader/Loader";
 
 const Post = () => {
-    const params = useParams();
+    const {title} = useParams();
 
     const dispatch = useDispatch();
     const loading = useSelector(getLoading);
     const post = useSelector(getPost);
 
     useEffect(() => {
-        dispatch(fetchPost(params.id));
-    }, [params.id, dispatch]);
+        dispatch(fetchPost(title));
+    }, [title, dispatch]);
 
     const getPostDescription = () => {
         if (!loading && post.description) {

@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.pagination_page_link{
+    text-decoration: none;
+}
+
 .pagination_page_item:hover {
     border-color: #2980D9;
     background-color: #2980D9;

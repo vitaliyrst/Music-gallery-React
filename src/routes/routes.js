@@ -37,12 +37,12 @@ const routes = [
         exact: true
     },
     {
-        path: '/news',
+        path: '/news/:page',
         Component: News,
         exact: true
     },
     {
-        path: '/news/:id',
+        path: '/news/:page/:title',
         Component: Post,
         exact: true
     },

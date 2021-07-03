@@ -31,7 +31,7 @@ const NavBar = () => {
                                  activeClassName='selected'>Gallery</NavLink>
                     </li>
                     <li className='navbar_list_item'>
-                        <NavLink className='navbar_list_item_link' to='/news'
+                        <NavLink className='navbar_list_item_link' to='/news/1'
                                  activeClassName='selected'>News</NavLink>
                     </li>
                 </ul>
