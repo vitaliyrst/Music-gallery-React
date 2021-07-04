@@ -1,0 +1,11 @@
+Model Information:
+* title:	Downloadable double door garage
+* source:	https://sketchfab.com/3d-models/downloadable-double-door-garage-2306e84a03584de587715235bfdc8450
+* author:	Alexandre_Gomes (https://sketchfab.com/Alexandre_Gomes)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Downloadable double door garage" (https://sketchfab.com/3d-models/downloadable-double-door-garage-2306e84a03584de587715235bfdc8450) by Alexandre_Gomes (https://sketchfab.com/Alexandre_Gomes) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

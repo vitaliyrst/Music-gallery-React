@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 
 import {useDispatch, useSelector} from "react-redux";
 import {getGroupAlbums, getLoading} from "../../redux/selectors";
-import {hideLoader, showLoader} from "../../redux/actions/actions";
+import {hideLoader, showLoader} from "../../redux/actions";
 
 import Fallback from "../Loader/Loader";
 

@@ -5,7 +5,7 @@ import aos from 'aos';
 import "aos/dist/aos.css";
 
 import {useDispatch, useSelector} from "react-redux";
-import {hideLoader, showLoader} from "../../redux/actions/actions";
+import {hideLoader, showLoader} from "../../redux/actions";
 import {getGroupBiography, getLoading} from "../../redux/selectors";
 
 import Fallback from "../Loader/Loader";

@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import routes from "./routes/routes";
 
 import {useDispatch} from "react-redux";
-import {fetchGroup, setOS} from "./redux/actions/actions";
+import {fetchGroup, setOS} from "./redux/actions";
 
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";

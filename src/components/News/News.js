@@ -6,7 +6,7 @@ import aos from 'aos';
 import "aos/dist/aos.css";
 
 import {useDispatch, useSelector} from "react-redux";
-import {fetchNews, setCurrentPostsOnPage} from "../../redux/actions/actions";
+import {fetchNews, setCurrentPostsOnPage} from "../../redux/actions";
 import {getCurrentPostsOnPage, getLoading, getNews, getOS} from "../../redux/selectors";
 
 import Pagination from "./Pagination/Pagination";

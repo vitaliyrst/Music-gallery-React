@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 
 import {useDispatch, useSelector} from "react-redux";
 import {getLoading, getPost} from "../../../redux/selectors";
-import {fetchPost} from "../../../redux/actions/actions";
+import {fetchPost} from "../../../redux/actions";
 
 import Fallback from "../../Loader/Loader";
 

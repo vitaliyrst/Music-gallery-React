@@ -42,3 +42,9 @@ export const getTotalPosts = (state) => {
 export const getPost = (state) => {
     return state.news.post;
 }
+
+//GALLERY
+
+export const getEnterState = (state) => {
+    return state.gallery.enter;
+}

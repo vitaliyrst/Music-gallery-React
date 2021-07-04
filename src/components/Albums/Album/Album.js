@@ -3,7 +3,7 @@ import './Album.css';
 
 import {useDispatch, useSelector} from "react-redux";
 import {getGroupAlbum, getLoading} from "../../../redux/selectors";
-import {hideLoader, showLoader} from "../../../redux/actions/actions";
+import {hideLoader, showLoader} from "../../../redux/actions";
 
 import {useParams} from "react-router";
 

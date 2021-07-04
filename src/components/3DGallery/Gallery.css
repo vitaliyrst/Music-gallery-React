@@ -1,3 +1,59 @@
-.gallery_container{
+.gallery_main_container {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery_enter {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
+
+    font-family: IBMPlexSans, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    cursor: pointer;
+}
+
+.gallery_enter:hover {
+    color: rgba(198, 0, 0, 255);
+    animation: linear 0.5s gallery_enter_hover;
+}
+
+@keyframes gallery_enter_hover {
+    0% {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        color: rgba(198, 0, 0, 255);
+    }
+}
+
+.gallery_canvas_container {
+    width: 100%;
+    height: 100%;
+
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.gallery_canvas_container.enter {
+    padding: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
 }
