@@ -30,7 +30,7 @@ const Player = (props) => {
             .normalize()
             .multiplyScalar(SPEED)
             .applyEuler(camera.rotation);
-
+        /*console.log(ref.current.getWorldPosition(camera.position))*/
         api.velocity.set(direction.x, 0, direction.z);
     });
 

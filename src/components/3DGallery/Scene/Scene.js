@@ -4,10 +4,10 @@ import {Canvas} from '@react-three/fiber'
 import {Physics} from "@react-three/cannon";
 import Ground from "../Ground/Ground";
 import Player from "../Player/Player";
-import Garage from "../Garage/Garage";
 import {Provider} from "react-redux";
 import store from "../../../redux/store";
 import Garage2 from "../Garage2/Garage2";
+import TV from "../TV/TV";
 
 const Scene = () => {
 
@@ -21,6 +21,7 @@ const Scene = () => {
                         <Player/>
                     </Physics>
                     <Garage2/>
+                    <TV/>
                 </Suspense>
 
             </Provider>

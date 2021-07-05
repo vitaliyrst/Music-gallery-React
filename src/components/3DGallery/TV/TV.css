@@ -1,0 +1,41 @@
+.control_panel_list {
+    width: 300px;
+    margin: 0 auto;
+    padding: 0;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.control_panel_item {
+    margin: 0 auto;
+    padding: 3px;
+
+    border: 2px solid red;
+    flex-basis: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control_panel_key {
+    font-family: IBMPlexSans, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.control_panel_action {
+    font-family: IBMPlexSans, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.control_panel_key.clicked{
+ border-color: #002d67;
+}
