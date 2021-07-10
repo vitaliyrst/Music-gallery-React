@@ -67,8 +67,6 @@ const TV = () => {
         window.addEventListener('keyup', handleKeyUp);
     }, [selectOnOff, tvOnOff, near, gltf]);
 
-    console.log(tvOnOff)
-
     useFrame(() => {
         vector1.copy(camera.position);
         vector2.copy(gltfRef.current.position);

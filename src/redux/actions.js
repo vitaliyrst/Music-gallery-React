@@ -1,7 +1,7 @@
 import database from "../firebase/firebase";
 import {
     ENTER_GALLERY,
-    FETCH_GROUP, FETCH_NEWS, FETCH_POST, HIDE_LOADER,
+    FETCH_GROUP, FETCH_NEWS, FETCH_POST, HIDE_LOADER, MODELS_LOADING,
     SET_CURRENTS_POSTS_ON_PAGE, SET_OS,
     SHOW_LOADER
 } from "./types";
@@ -91,6 +91,13 @@ export const setCurrentPostsOnPage = (posts) => {
 export const setEnter = (state) => {
     return {
         type: ENTER_GALLERY,
+        payload: state
+    }
+}
+
+export const setModelsLoading = (state) => {
+    return {
+        type: MODELS_LOADING,
         payload: state
     }
 }

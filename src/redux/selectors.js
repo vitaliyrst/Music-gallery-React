@@ -48,3 +48,7 @@ export const getPost = (state) => {
 export const getEnterState = (state) => {
     return state.gallery.enter;
 }
+
+export const getModelsLoading = (state) => {
+    return state.gallery.modelsLoading;
+}

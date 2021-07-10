@@ -3,20 +3,22 @@ import './Gallery.css';
 import Scene from "./Scene/Scene";
 import {useDispatch, useSelector} from "react-redux";
 import {setEnter} from "../../redux/actions";
-import {getEnterState} from "../../redux/selectors";
+import {getEnterState, getModelsLoading} from "../../redux/selectors";
 
 const Gallery = () => {
-    const dispatch = useDispatch();
     const canvasContainer = useRef();
     const enterButton = useRef();
+
+    const dispatch = useDispatch();
     const entered = useSelector(getEnterState);
+    const modelsLoading = useSelector(getModelsLoading);
 
     useEffect(() => {
-        if (!entered) {
+        if (!entered && modelsLoading) {
             canvasContainer.current.classList.remove('enter');
             enterButton.current.style.zIndex = '1';
         }
-    }, [entered]);
+    }, [entered, modelsLoading]);
 
     const handleClickFullScreen = () => {
         dispatch(setEnter(true));
@@ -26,9 +28,11 @@ const Gallery = () => {
 
     return (
         <div className='gallery_main_container'>
+            {modelsLoading &&
             <div ref={enterButton} className='gallery_enter' onClick={handleClickFullScreen}>
                 Click enter
-            </div>
+            </div>}
+
             <div ref={canvasContainer} className='gallery_canvas_container'>
                 <Scene/>
             </div>

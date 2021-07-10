@@ -25,6 +25,17 @@
     z-index: 1;
 
     cursor: pointer;
+
+    animation: 2s linear gallery_op;
+}
+
+@keyframes gallery_op {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .gallery_enter:hover {

@@ -10,10 +10,10 @@ import usePlayerControls from '../Controls/usePlayerControls';
 
 const Player = (props) => {
     const {camera} = useThree();
-    const SPEED = 22;
+    const SPEED = 5;
 
     const [ref, api] = useSphere(() => ({
-        mass: 1, type: 'Kinematic', position: [0, 10, 0], ...props
+        mass: 1, type: 'Kinematic', position: [0, 1, 0], ...props
     }));
 
     const {moveForward, moveBackward, moveLeft, moveRight} = usePlayerControls();
@@ -30,9 +30,10 @@ const Player = (props) => {
             .normalize()
             .multiplyScalar(SPEED)
             .applyEuler(camera.rotation);
-        /*console.log(ref.current.getWorldPosition(camera.position))*/
+
         api.velocity.set(direction.x, 0, direction.z);
     });
+
 
     return (
         <>
