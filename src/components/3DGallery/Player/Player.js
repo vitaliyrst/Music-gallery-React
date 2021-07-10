@@ -5,8 +5,8 @@ import {useThree, useFrame} from "@react-three/fiber";
 
 import {Vector3} from "three";
 
-import Controls from "../Controls/Controls";
-import usePlayerControls from '../Controls/usePlayerControls';
+import Controls from "./Controls/Controls";
+import usePlayerControls from './Controls/usePlayerControls';
 
 const Player = (props) => {
     const {camera} = useThree();

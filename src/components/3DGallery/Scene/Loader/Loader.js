@@ -7,14 +7,17 @@ import {setModelsLoading} from "../../../../redux/actions";
 const Loader = () => {
     const dispatch = useDispatch();
     const {total} = useProgress();
-    console.log(total)
+    const totalObjects = 66;
+
     useEffect(() => {
-        if (total === 62) {
+        if (total === totalObjects) {
             setTimeout(() => {
                 dispatch(setModelsLoading(true));
-            }, 1000);
+            }, 3000);
         }
     }, [dispatch, total]);
+
+    const formula = (100 / totalObjects) * total;
 
     return (
         <Html center>
@@ -23,8 +26,8 @@ const Loader = () => {
                     Loading...
                 </div>
                 <div className="loader3d_progressbar_container">
-                    <div className="loader3d_progressbar_complete" style={{width: `${(100 / 62) * total}%`}}/>
-                    <span className="loader3d_progressbar_progress">{((100 / 62) * total).toFixed(0)}
+                    <div className="loader3d_progressbar_complete" style={{width: `${formula}%`}}/>
+                    <span className="loader3d_progressbar_progress">{formula.toFixed(0)}
                         %
                     </span>
                 </div>
