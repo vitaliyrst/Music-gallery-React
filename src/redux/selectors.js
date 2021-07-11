@@ -52,3 +52,7 @@ export const getEnterState = (state) => {
 export const getModelsLoading = (state) => {
     return state.gallery.modelsLoading;
 }
+
+export const getModelsRef = (state) => {
+    return state.gallery.modelsRef;
+}

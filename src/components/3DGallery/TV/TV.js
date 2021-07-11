@@ -23,9 +23,10 @@ const TV = () => {
     const gltf = useLoader(GLTFLoader, './assets/3d/tv/scene.gltf');
 
     useEffect(() => {
-        gltf.scene.scale.set(0.3, 0.3, 0.3)
-        gltf.scene.position.y = 10;
-        gltf.scene.position.z = -23.7;
+        gltf.scene.scale.set(0.12, 0.12, 0.12);
+        gltf.scene.position.set(-13.13, 3.2, 0.3);
+        gltf.scene.rotation.set(0, Math.PI / 2, 0);
+
 
         const handleKeyDown = (eo) => {
             if (near) {
@@ -70,22 +71,23 @@ const TV = () => {
     useFrame(() => {
         vector1.copy(camera.position);
         vector2.copy(gltfRef.current.position);
+
         let distance = vector1.distanceTo(vector2);
 
-        if (distance < 15 && !near) {
+        if (distance < 7 && !near) {
             setNear(true);
         }
-        if (distance > 15 && near) {
+        if (distance > 7 && near) {
             setNear(false);
         }
     });
 
     const getOverlay = () => {
         return (
-            <mesh>
+            <mesh position={[-13.13, 3.2, 0.3]} rotation={[0, Math.PI / 2, Math.PI]}>
                 <planeGeometry/>
                 <meshStandardMaterial/>
-                <Html distanceFactor={0} position={[0, 10, -23.7]} transform>
+                <Html distanceFactor={-4} position={[0, 0, 0.1]} transform occlude>
                     <iframe ref={iframeRef} width="700" height="400" src="https://www.youtube.com/embed/LhlASZXjSbw"
                             title="YouTube video player" frameBorder="0"
                             allow='autoplay'
@@ -95,13 +97,12 @@ const TV = () => {
         )
     }
 
-
     const getControlPanel = () => {
         return (
             <mesh>
                 <planeGeometry/>
                 <meshStandardMaterial/>
-                <Html distanceFactor={0} position={[0, 7, -17]} transform rotation={[-Math.PI / 2 / 2, 0, 0]}>
+                <Html distanceFactor={0} position={[-10, 1.5, 0.3]} transform rotation={[0, Math.PI / 2, 0]}>
                     <ul className='control_panel_list'>
                         <li ref={refQ} className='control_panel_item'>
                             <div className='control_panel_key'>Press Q</div>
@@ -145,7 +146,10 @@ const TV = () => {
             {tvOnOff && getOverlay()}
             {near && getControlPanel()}
             {selectOnOff && getSelectPanel()}
-            <primitive ref={gltfRef} object={gltf.scene}/>
+            <primitive
+                ref={gltfRef}
+                object={gltf.scene}
+            />
         </>
     )
 }

@@ -1,0 +1,30 @@
+.gallery3d_album_description_container {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border-radius: 10px;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery3d_album_description_wrapper{
+    overflow: auto;
+}
+
+.gallery3d_album_description {
+    font-family: IBMPlexSans, sans-serif;
+    font-weight: 500;
+    font-size: 4px;
+    line-height: 6px;
+}
+
+.gallery3d_album_description_wrapper::-webkit-scrollbar {
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery3d_album_description_wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(200, 200, 200, 0.8);
+}

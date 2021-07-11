@@ -13,7 +13,7 @@ const Player = (props) => {
     const SPEED = 5;
 
     const [ref, api] = useSphere(() => ({
-        mass: 1, type: 'Kinematic', position: [0, 1, 0], ...props
+        mass: 1, type: 'Kinematic', position: [0, 1.8, 0], ...props
     }));
 
     const {moveForward, moveBackward, moveLeft, moveRight} = usePlayerControls();

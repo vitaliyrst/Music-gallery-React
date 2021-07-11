@@ -6,16 +6,14 @@ import {setModelsLoading} from "../../../../redux/actions";
 
 const Loader = () => {
     const dispatch = useDispatch();
-    const {total} = useProgress();
-    const totalObjects = 66;
+    const {active, total} = useProgress();
+    const totalObjects = 137;
 
     useEffect(() => {
-        if (total === totalObjects) {
-            setTimeout(() => {
-                dispatch(setModelsLoading(true));
-            }, 3000);
+        if (!active) {
+            dispatch(setModelsLoading(true));
         }
-    }, [dispatch, total]);
+    }, [active, dispatch]);
 
     const formula = (100 / totalObjects) * total;
 

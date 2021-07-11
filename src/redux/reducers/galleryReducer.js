@@ -1,8 +1,9 @@
-import {ENTER_GALLERY, MODELS_LOADING} from "../types";
+import {ENTER_GALLERY, MODELS_LOADING, MODELS_REF} from "../types";
 
 const initialState = {
     enter: false,
-    modelsLoading: false
+    modelsLoading: false,
+    modelsRef: []
 }
 
 export const galleryReducer = (state = initialState, action) => {
@@ -11,6 +12,8 @@ export const galleryReducer = (state = initialState, action) => {
             return {...state, enter: action.payload}
         case MODELS_LOADING:
             return {...state, modelsLoading: action.payload}
+        case MODELS_REF:
+            return {...state, modelsRef: action.payload}
         default :
             return state;
     }

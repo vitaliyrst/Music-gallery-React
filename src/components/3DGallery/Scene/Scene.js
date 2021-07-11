@@ -12,11 +12,11 @@ import TV from "../TV/TV";
 import Loader from "./Loader/Loader";
 import Env from "./Env/Env";
 import Models from "../Models/Models";
+import Images from "../Images/Images";
 
 const Scene = () => {
     return (
         <Canvas mode='concurrent' gl={{alpha: true}}>
-
             <Provider store={store}>
                 <ambientLight/>
                 <Physics>
@@ -26,6 +26,7 @@ const Scene = () => {
                         <Factory/>
                         <TV/>
                         <Models/>
+                        <Images/>
                     </Suspense>
                 </Physics>
             </Provider>
