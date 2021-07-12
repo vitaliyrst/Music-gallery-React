@@ -87,7 +87,7 @@ const TV = () => {
             <mesh position={[-13.13, 3.2, 0.3]} rotation={[0, Math.PI / 2, Math.PI]}>
                 <planeGeometry/>
                 <meshStandardMaterial/>
-                <Html distanceFactor={-4} position={[0, 0, 0.1]} transform occlude>
+                <Html distanceFactor={-1} position={[0, 0, 0.1]} transform occlude={true}>
                     <iframe ref={iframeRef} width="700" height="400" src="https://www.youtube.com/embed/LhlASZXjSbw"
                             title="YouTube video player" frameBorder="0"
                             allow='autoplay'
@@ -96,6 +96,7 @@ const TV = () => {
             </mesh>
         )
     }
+
 
     const getControlPanel = () => {
         return (

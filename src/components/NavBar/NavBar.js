@@ -27,10 +27,6 @@ const NavBar = () => {
                                  activeClassName='selected'>Albums</NavLink>
                     </li>
                     <li className='navbar_list_item'>
-                        <NavLink className='navbar_list_item_link' to='/gallery'
-                                 activeClassName='selected'>Gallery</NavLink>
-                    </li>
-                    <li className='navbar_list_item'>
                         <NavLink className='navbar_list_item_link' to='/news/1'
                                  activeClassName='selected'>News</NavLink>
                     </li>

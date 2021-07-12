@@ -32,11 +32,6 @@ const routes = [
         exact: true
     },
     {
-        path: '/gallery',
-        Component: Gallery,
-        exact: true
-    },
-    {
         path: '/news/:page',
         Component: News,
         exact: true
